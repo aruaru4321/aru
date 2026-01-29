@@ -22,7 +22,9 @@
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; font-size: 1.05rem; z-index: 2; }
         .omoi-content p { margin-bottom: 1.5rem; }
-        .no-wrap { display: inline-block; white-space: nowrap; }
+        
+        /* 絶対に改行させない魔法のクラス */
+        .force-no-wrap { white-space: nowrap; display: inline-block; }
         
         .representative-frame { width: 280px; height: 280px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
@@ -30,11 +32,10 @@
         .card-container { max-width: 800px; margin: 0 auto; position: relative; padding: 0; }
         .underline-title { display: inline-block !important; border-bottom: 2px solid #333; margin-bottom: 0px !important; padding-bottom: 5px; line-height: 1.2; }
         
-        /* 事業内容の円形デザイン調整 */
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
-        .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
-        .business-circle strong { font-size: 1.15rem; display: block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
-        .business-circle p { font-size: 0.85rem; line-height: 1.6; color: #333; padding: 0 5px; }
+        .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
+        .business-circle strong { font-size: 1.1rem; display: block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+        .business-circle p { font-size: 0.82rem; line-height: 1.5; color: #333; }
         
         .section-spacer { height: 4rem; clear: both; }
         .title-under-spacer { height: 1.5rem; }
@@ -61,7 +62,7 @@
             .representative-frame { margin: 2rem auto 0; width: 220px; height: 220px; }
             .right-aligned-content { width: 100%; }
             .profile-side-illustration { position: static; display: block; margin: 0 auto 2rem; width: 160px; }
-            .business-circle { width: 230px; height: 230px; }
+            .business-circle { width: 235px; height: 235px; }
             .sns-side-img { margin: 1rem auto; width: 180px; }
         }
     </style>
@@ -88,7 +89,7 @@
                 <h3 class="title is-4 underline-title">設立のオモイ</h3>
                 <div class="omoi-content mt-5">
                     <p>合同会社あるを創業したきっかけは、<br>
-                    <span class="no-wrap">実の母親が金融詐欺に遭い、老後資金を全て失ってしまった事です。</span></p>
+                    <span class="force-no-wrap">実の母親が金融詐欺に遭い、老後資金を全て失ってしまった事です。</span></p>
                     
                     <p>自分自身が人材業界にて最高営業責任者していたのも相まって、<br>
                     金融詐欺を通して、<br>
@@ -117,15 +118,15 @@
             <div class="circle-container">
                 <div class="business-circle">
                     <strong>①営業代行事業</strong>
-                    <p>導線計画の策定からクロージングまで、<br>全フェーズを徹底的にサポートします。</p>
+                    <p>導線計画の策定から<br>クロージングまで、<br>全フェーズを徹底的に<br>サポートします。</p>
                 </div>
                 <div class="business-circle">
                     <strong>②ラポクロ</strong>
-                    <p>本質を学びスキルを習得する<br>オンラインセールス養成スクールです。</p>
+                    <p>本質を学びスキルを<br>習得するオンラインセールス<br>養成スクールです。</p>
                 </div>
                 <div class="business-circle">
                     <strong>③営業コーチング</strong>
-                    <p>売り上げ向上に必要なスキルと<br>客観的な分析・助言を提供します。</p>
+                    <p>売り上げ向上に必要な<br>スキルと客観的な<br>分析・助言を提供します。</p>
                 </div>
             </div>
 
