@@ -7,84 +7,80 @@
   <title>合同会社ある | 可能性をつかむ場所がここにある。</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Kosugi Maru', sans-serif;
       background-color: #fff;
       color: #333;
-      margin: 0;
-      line-height: 1.6;
-    }
-    .top-spacer {
-      height: 40px;
-      background-color: #fff;
-      width: 100%;
+      line-height: 1.8; /* 行間を広げて読みやすく */
     }
     .hero-banner {
       background-color: #fade6b;
-      padding: 3rem 1.5rem;
-      position: relative;
-      overflow: hidden;
-      min-height: 70vh;
+      padding: 4rem 1.5rem;
+      min-height: 60vh;
       display: flex;
       align-items: center;
     }
     .hero-container {
       max-width: 900px;
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
       width: 100%;
     }
     .company-name {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
-      display: inline-block;
       border-bottom: 2px solid #333;
+      display: inline-block;
       margin-bottom: 2rem;
     }
-    /* メインコピー：スマホとPCでサイズを切り替え */
+    /* メインコピーの調整 */
     .main-copy {
-      font-size: 2.2rem; /* スマホ用 */
+      font-size: 1.8rem; /* スマホ用サイズ */
       font-weight: bold;
-      line-height: 1.3;
-      margin-bottom: 2rem;
-      word-break: keep-all;
-      overflow-wrap: break-word;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+      word-break: keep-all; /* 単語の途中で切らない */
+      overflow-wrap: anywhere;
     }
+    /* スマホの時だけ <br> を無効にする */
+    @media screen and (max-width: 768px) {
+      .main-copy br {
+        display: none;
+      }
+    }
+    /* PCの時は文字を大きく、改行を有効に */
     @media screen and (min-width: 769px) {
       .main-copy {
-        font-size: 4rem; /* PC用 */
+        font-size: 3.5rem;
       }
-      .hero-banner {
-        padding: 5rem 2rem;
+      .main-copy br {
+        display: inline;
       }
     }
     .sub-copy {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin-bottom: 3rem;
+      font-size: 1rem;
+      max-width: 500px;
     }
-    .illustration-right {
-      position: absolute;
-      right: -20px;
-      bottom: -10px;
-      width: 250px;
-      opacity: 0.8;
-      z-index: 1;
+    /* 設立のオモイ セクション */
+    .section-content {
+      padding: 4rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    @media screen and (min-width: 769px) {
-      .illustration-right {
-        right: 5%;
-        bottom: 5%;
-        width: 400px;
-      }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-bottom: 2px solid #333;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .content-text {
+      font-size: 1rem;
+      text-align: justify; /* 両端を揃えて綺麗に見せる */
     }
   </style>
 </head>
 <body>
-  <div class="top-spacer"></div>
   <section class="hero-banner">
     <div class="hero-container">
       <div class="company-name">合同会社ある</div>
@@ -92,14 +88,23 @@
         可能性をつかむ場所が<br>ここにある。
       </h1>
       <p class="sub-copy">
-        顧客のニーズを理解し、<br>
-        最高品質かつ最高の成果を提供することに全力を尽くします。
+        顧客のニーズを理解し、最高品質かつ最高の成果を提供することに全力を尽くします。
       </p>
     </div>
-    <div class="illustration-right">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#333" d="M40,160 Q80,20 160,160" stroke="#333" stroke-width="2" fill="none" />
-      </svg>
+  </section>
+
+  <section class="section-content">
+    <h2 class="section-title">設立のオモイ</h2>
+    <div class="content-text">
+      <p>
+        合同会社あるを創業したきっかけは、実の母親が金融詐欺まがいないわゆる、老後資金の搾取に遭ってしまったことがあったからです。
+      </p>
+      <p style="margin-top: 1.5rem;">
+        自分自身が人材業界にて最高営業成績を出している一方で、身近な大切な人を守れなかったという悔しさが、この会社を立ち上げる原動力となりました。
+      </p>
+      <p style="margin-top: 1.5rem;">
+        「ある」という名前には、ここにチャンスがある、ここに助けがある、ここに可能性がある、という想いを込めています。
+      </p>
     </div>
   </section>
 </body>
