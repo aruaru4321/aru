@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta name="google-site-verification" content="-064rE3D7Vs71C1Jp-knjbdAgcoATSEz_gepR37DXGM" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>合同会社ある | 可能性をつかむ場所がここにある。</title>
@@ -18,17 +17,17 @@
         .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
         .floating-hero-image { position: absolute; right: -30px; top: -100px; width: 400px; height: auto; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
         
-        /* 「す。」対策：禁則処理と単語の塊保持 */
+        /* 文末の「す。」落ち対策：スマホで動的に文字サイズを縮小 */
         .omoi-content p { 
             margin-bottom: 1.5rem; 
-            word-break: keep-all; 
-            overflow-wrap: anywhere; 
+            font-size: clamp(0.85rem, 2.5vw, 1.05rem); /* 画面幅に合わせて自動調整 */
+            word-break: keep-all;
+            overflow-wrap: anywhere;
         }
-        .no-break { display: inline-block; white-space: nowrap; }
 
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
-        .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; font-size: 1.05rem; z-index: 2; }
+        .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; }
         
         .representative-frame { width: 280px; height: 280px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
@@ -44,16 +43,18 @@
         .section-spacer { height: 4rem; clear: both; }
         .title-under-spacer { height: 1.5rem; }
         
-        .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+        /* SNSエリア：ロゴ配置を左寄せに */
+        .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
-        .sns-icons-wrap { display: flex; gap: 25px; margin-top: 1.5rem; }
+        .sns-icons-wrap { display: flex; gap: 30px; margin-top: 1rem; } /* 1行分空けて配置 */
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; }
         .sns-link-icon:hover { color: #333; }
-        .sns-side-img { width: 200px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
+        .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
         .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: 0.3s; color: #333; text-decoration: none; }
         .recruit-link:hover { background: #f0f0f0; transform: translateX(5px); }
         
+        /* お問い合わせフォーム */
         .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
         .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; }
         
@@ -61,10 +62,10 @@
 
         @media screen and (max-width: 1024px) {
             .main-copy { font-size: 2.1rem; }
-            .floating-hero-image { width: 250px; top: -30px; right: -30px; }
-            .representative-frame { margin: 2rem auto 0; width: 220px; height: 220px; }
-            .omoi-content { font-size: 1rem; }
-            .sns-side-img { margin-top: 1rem; width: 140px; }
+            .floating-hero-image { width: 220px; top: -20px; right: -20px; }
+            .representative-frame { margin: 2rem auto 0; width: 200px; height: 200px; }
+            .sns-side-img { display: none; } /* スマホでは右側の画像を隠してスッキリさせる */
+            .sns-icons-wrap { justify-content: flex-start; }
         }
     </style>
 </head>
@@ -89,15 +90,13 @@
             <div class="omoi-text-wrapper">
                 <h3 class="title is-4 underline-title">設立のオモイ</h3>
                 <div class="omoi-content mt-5">
-                    <p>合同会社あるを創業したきっかけは、<br>
-                    実の母親が金融詐欺に遭い、老後資金を全て失って<span class="no-break">しまった事です。</span></p>
+                    <p>合同会社あるを創業したきっかけは、実の母親が金融詐欺に遭い、<br>
+                    老後資金を全て失ってしまった事です。</p>
                     
                     <p>自分自身が人材業界にて最高営業責任者していたのも相まって、<br>
-                    金融詐欺を通して、<br>
-                    「悪用された営業」というものに対し激しい憤りを<span class="no-break">感じました。</span></p>
+                    金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
                     
-                    <p>世界から詐欺を少しでもなくしたいと思い、<br>
-                    弊社では<br>
+                    <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
                     <strong>「可能性を掴む場所がここにある。」</strong>をビジョンとして掲げ、<br>
                     <strong>「何があってもお客様の味方」</strong>というマインドを遵守し、<br>
                     お客様と企業様を繋ぐ三方良しの営業活動に尽力しています。</p>
@@ -161,11 +160,30 @@
             <h3 class="title is-4 underline-title">お問い合わせ</h3>
             <div class="title-under-spacer"></div>
             <div class="contact-form">
-                <form action="#" method="POST">
-                    <div class="field"><label class="label">お名前</label><div class="control"><input class="input" type="text" placeholder="例：山田 太郎" required></div></div>
-                    <div class="field"><label class="label">メールアドレス</label><div class="control"><input class="input" type="email" placeholder="例：sample@example.com" required></div></div>
-                    <div class="field"><label class="label">内容</label><div class="control"><textarea class="textarea" placeholder="ご相談内容をご記入ください" required></textarea></div></div>
-                    <div class="control mt-5"><button type="submit" class="button is-fullwidth is-primary-custom">上記の内容で送信する</button></div>
+                <form action="mailto:contact@aru-info.com" method="post" enctype="text/plain">
+                    <div class="field">
+                        <label class="label">お名前</label>
+                        <div class="control"><input class="input" name="お名前" type="text" placeholder="例：山田 太郎" required></div>
+                    </div>
+                    <div class="field">
+                        <label class="label">会社名</label>
+                        <div class="control"><input class="input" name="会社名" type="text" placeholder="例：株式会社〇〇"></div>
+                    </div>
+                    <div class="field">
+                        <label class="label">メールアドレス</label>
+                        <div class="control"><input class="input" name="メールアドレス" type="email" placeholder="例：sample@example.com" required></div>
+                    </div>
+                    <div class="field">
+                        <label class="label">電話番号</label>
+                        <div class="control"><input class="input" name="電話番号" type="tel" placeholder="例：03-1234-5678"></div>
+                    </div>
+                    <div class="field">
+                        <label class="label">問い合わせ内容</label>
+                        <div class="control"><textarea class="textarea" name="内容" placeholder="ご相談内容をご記入ください" required></textarea></div>
+                    </div>
+                    <div class="control mt-5">
+                        <button type="submit" class="button is-fullwidth is-primary-custom">上記の内容で送信する</button>
+                    </div>
                 </form>
             </div>
         </div>
