@@ -17,17 +17,13 @@
         .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
         .floating-hero-image { position: absolute; right: -30px; top: -100px; width: 400px; height: auto; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
         
-        /* 文末の「す。」落ち対策：スマホで動的に文字サイズを縮小 */
-        .omoi-content p { 
-            margin-bottom: 1.5rem; 
-            font-size: clamp(0.85rem, 2.5vw, 1.05rem); /* 画面幅に合わせて自動調整 */
-            word-break: keep-all;
-            overflow-wrap: anywhere;
-        }
+        /* 「す。」落ちを物理的に防ぐ */
+        .prevent-break { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; }
+        .omoi-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
         
         .representative-frame { width: 280px; height: 280px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
@@ -38,34 +34,26 @@
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
         .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
         .business-circle strong { font-size: 1.1rem; display: block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
-        .business-circle p { font-size: 0.85rem; line-height: 1.6; color: #333; }
         
-        .section-spacer { height: 4rem; clear: both; }
-        .title-under-spacer { height: 1.5rem; }
-        
-        /* SNSエリア：ロゴ配置を左寄せに */
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
-        .sns-icons-wrap { display: flex; gap: 30px; margin-top: 1rem; } /* 1行分空けて配置 */
+        .sns-icons-wrap { display: flex; gap: 30px; margin-top: 1.5rem; } /* 1行分あけて配置 */
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; }
-        .sns-link-icon:hover { color: #333; }
         .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
         .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: 0.3s; color: #333; text-decoration: none; }
-        .recruit-link:hover { background: #f0f0f0; transform: translateX(5px); }
         
-        /* お問い合わせフォーム */
+        /* 復活のお問い合わせフォーム */
         .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
-        .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; }
-        
-        .site-footer { background-color: #fade6b; padding: 2rem 0; margin-top: 4rem; }
+        .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; cursor: pointer; }
+
+        .section-spacer { height: 4rem; clear: both; }
+        .title-under-spacer { height: 1.5rem; }
 
         @media screen and (max-width: 1024px) {
-            .main-copy { font-size: 2.1rem; }
-            .floating-hero-image { width: 220px; top: -20px; right: -20px; }
-            .representative-frame { margin: 2rem auto 0; width: 200px; height: 200px; }
-            .sns-side-img { display: none; } /* スマホでは右側の画像を隠してスッキリさせる */
-            .sns-icons-wrap { justify-content: flex-start; }
+            .main-copy { font-size: 2rem; }
+            .prevent-break { font-size: 0.9rem; white-space: normal; } /* スマホでは多少の改行を許容しつつフォントを落とす */
+            .sns-side-img { display: none; }
         }
     </style>
 </head>
@@ -76,12 +64,9 @@
             <div class="hero-text-content">
                 <div class="company-name-top">合同会社ある</div>
                 <h1 class="main-copy">可能性をつかむ場所が<br>ここにある。</h1>
-                <p class="sub-copy">
-                    顧客のニーズを理解し、<br>
-                    最高品質かつ最高の成果を提供することに全力を尽くします。
-                </p>
+                <p class="sub-copy">顧客のニーズを理解し、最高品質かつ最高の成果を提供することに全力を尽くします。</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000" alt="メインイラスト" class="floating-hero-image">
+            <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000" class="floating-hero-image">
         </div>
     </section>
 
@@ -90,23 +75,19 @@
             <div class="omoi-text-wrapper">
                 <h3 class="title is-4 underline-title">設立のオモイ</h3>
                 <div class="omoi-content mt-5">
-                    <p>合同会社あるを創業したきっかけは、実の母親が金融詐欺に遭い、<br>
-                    老後資金を全て失ってしまった事です。</p>
+                    <p>合同会社あるを創業したきっかけは、</p>
+                    <p class="prevent-break">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
                     
                     <p>自分自身が人材業界にて最高営業責任者していたのも相まって、<br>
                     金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
                     
                     <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
-                    <strong>「可能性を掴む場所がここにある。」</strong>をビジョンとして掲げ、<br>
-                    <strong>「何があってもお客様の味方」</strong>というマインドを遵守し、<br>
-                    お客様と企業様を繋ぐ三方良しの営業活動に尽力しています。</p>
-                    
-                    <p>世の中には素敵なものが沢山あると思っています。<br>
-                    <strong>いいものがいい形で広がる。</strong>ことを目標に事業展開していきます。</p>
+                    <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
+                    <strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
                 </div>
             </div>
             <div class="representative-frame">
-                <img src="https://drive.google.com/thumbnail?id=1xHViutep87Injjbt8FxJLeXVTu3l7CQJ&sz=w1000" alt="代表 田中 創">
+                <img src="https://drive.google.com/thumbnail?id=1xHViutep87Injjbt8FxJLeXVTu3l7CQJ&sz=w1000">
             </div>
         </div>
 
@@ -116,34 +97,23 @@
             <h3 class="title is-4 underline-title">事業内容</h3>
             <div class="title-under-spacer"></div>
             <div class="circle-container">
-                <div class="business-circle">
-                    <strong>①営業代行事業</strong>
-                    <p>導線計画の策定から<br>クロージングまで、<br>全フェーズを徹底的に<br>サポートします。</p>
-                </div>
-                <div class="business-circle">
-                    <strong>②ラポクロ</strong>
-                    <p>本質を学びスキルを<br>習得するオンラインセールス<br>養成スクールです。</p>
-                </div>
-                <div class="business-circle">
-                    <strong>③営業コーチング</strong>
-                    <p>売り上げ向上に必要な<br>スキルと客観的な<br>分析・助言を提供します。</p>
-                </div>
+                <div class="business-circle"><strong>①営業代行事業</strong><p>全フェーズを徹底的にサポートします。</p></div>
+                <div class="business-circle"><strong>②ラポクロ</strong><p>オンラインセールス養成スクールです。</p></div>
+                <div class="business-circle"><strong>③営業コーチング</strong><p>客観的な分析・助言を提供します。</p></div>
             </div>
 
             <div class="section-spacer"></div>
 
-            <div class="latest-info-section">
-                <h3 class="title is-4 underline-title">最新情報</h3>
-                <div class="latest-info-flex mt-4">
-                    <div class="latest-info-text">
-                        <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
-                        <div class="sns-icons-wrap">
-                            <a href="https://www.instagram.com/darao_zaitakuwork?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram sns-link-icon"></i></a>
-                            <a href="https://www.youtube.com/@daradaradarao829" target="_blank"><i class="fa-brands fa-youtube sns-link-icon"></i></a>
-                        </div>
+            <h3 class="title is-4 underline-title">最新情報</h3>
+            <div class="latest-info-flex mt-4">
+                <div class="latest-info-text">
+                    <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
+                    <div class="sns-icons-wrap">
+                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank"><i class="fa-brands fa-instagram sns-link-icon"></i></a>
+                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank"><i class="fa-brands fa-youtube sns-link-icon"></i></a>
                     </div>
-                    <img src="https://drive.google.com/thumbnail?id=1wGGsfIHKhkYWlPFhbPLF4icnqUkRAB-K&sz=w500" alt="最新情報イメージ" class="sns-side-img">
                 </div>
+                <img src="https://drive.google.com/thumbnail?id=1wGGsfIHKhkYWlPFhbPLF4icnqUkRAB-K&sz=w500" class="sns-side-img">
             </div>
 
             <div class="section-spacer"></div>
@@ -161,36 +131,17 @@
             <div class="title-under-spacer"></div>
             <div class="contact-form">
                 <form action="mailto:contact@aru-info.com" method="post" enctype="text/plain">
-                    <div class="field">
-                        <label class="label">お名前</label>
-                        <div class="control"><input class="input" name="お名前" type="text" placeholder="例：山田 太郎" required></div>
-                    </div>
-                    <div class="field">
-                        <label class="label">会社名</label>
-                        <div class="control"><input class="input" name="会社名" type="text" placeholder="例：株式会社〇〇"></div>
-                    </div>
-                    <div class="field">
-                        <label class="label">メールアドレス</label>
-                        <div class="control"><input class="input" name="メールアドレス" type="email" placeholder="例：sample@example.com" required></div>
-                    </div>
-                    <div class="field">
-                        <label class="label">電話番号</label>
-                        <div class="control"><input class="input" name="電話番号" type="tel" placeholder="例：03-1234-5678"></div>
-                    </div>
-                    <div class="field">
-                        <label class="label">問い合わせ内容</label>
-                        <div class="control"><textarea class="textarea" name="内容" placeholder="ご相談内容をご記入ください" required></textarea></div>
-                    </div>
-                    <div class="control mt-5">
-                        <button type="submit" class="button is-fullwidth is-primary-custom">上記の内容で送信する</button>
-                    </div>
+                    <div class="field"><label class="label">お名前</label><div class="control"><input class="input" name="Name" type="text" placeholder="例：山田 太郎" required></div></div>
+                    <div class="field"><label class="label">会社名</label><div class="control"><input class="input" name="Company" type="text" placeholder="例：合同会社ある"></div></div>
+                    <div class="field"><label class="label">メールアドレス</label><div class="control"><input class="input" name="Email" type="email" placeholder="例：sample@example.com" required></div></div>
+                    <div class="field"><label class="label">電話番号</label><div class="control"><input class="input" name="Phone" type="tel" placeholder="例：03-1234-5678"></div></div>
+                    <div class="field"><label class="label">問い合わせ内容</label><div class="control"><textarea class="textarea" name="Message" placeholder="ご相談内容をご記入ください" required></textarea></div></div>
+                    <div class="control mt-5"><button type="submit" class="button is-fullwidth is-primary-custom">上記の内容でメールを送信する</button></div>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="site-footer has-text-centered">
-        <p>© 2026 <strong>合同会社ある</strong></p>
-    </footer>
+    <footer class="site-footer has-text-centered"><p>© 2026 <strong>合同会社ある</strong></p></footer>
 </body>
 </html>
