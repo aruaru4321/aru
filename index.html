@@ -22,8 +22,6 @@
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; font-size: 1.05rem; z-index: 2; }
         .omoi-content p { margin-bottom: 1.5rem; }
-        
-        /* テキストの折り返し制御 */
         .text-wrap-control { display: inline-block; width: 100%; }
         
         .representative-frame { width: 280px; height: 280px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; }
@@ -44,10 +42,10 @@
         .profile-side-illustration { position: absolute; left: -140px; top: 0; width: 200px; height: auto; mix-blend-mode: multiply; z-index: 1; }
         .right-aligned-content { width: 75%; margin-left: auto; position: relative; z-index: 2; }
         
-        /* SNSエリアの修正 */
-        .sns-area { margin-top: 1.5rem; }
-        .sns-icons { display: flex; gap: 30px; align-items: center; margin-top: 1.5rem; }
-        .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.4s; }
+        /* SNSエリア：確実に空白を消すスタイル */
+        .sns-area { margin-top: 1rem; width: 100%; text-align: left; }
+        .sns-icons { display: flex; gap: 40px; align-items: center; margin-top: 1.5rem; justify-content: flex-start; }
+        .sns-link-icon { font-size: 60px; color: #fade6b; transition: 0.4s; }
         .sns-link-icon:hover { transform: scale(1.1); color: #333; }
 
         .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: 0.3s; color: #333; text-decoration: none; }
@@ -64,6 +62,8 @@
             .right-aligned-content { width: 100%; }
             .profile-side-illustration { position: static; display: block; margin: 0 auto 2rem; width: 160px; }
             .business-circle { width: 240px; height: 240px; }
+            .sns-icons { justify-content: center; } /* スマホではアイコンも中央に */
+            .sns-area { text-align: center; }
         }
     </style>
 </head>
@@ -157,8 +157,12 @@
                 <div class="sns-area">
                     <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
                     <div class="sns-icons">
-                        <a href="https://www.instagram.com/darao_zaitakuwork?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram sns-link-icon"></i></a>
-                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank"><i class="fa-brands fa-youtube sns-link-icon"></i></a>
+                        <a href="https://www.instagram.com/darao_zaitakuwork?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                            <i class="fa-brands fa-instagram sns-link-icon"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank">
+                            <i class="fa-brands fa-youtube sns-link-icon"></i>
+                        </a>
                     </div>
                 </div>
             </div>
