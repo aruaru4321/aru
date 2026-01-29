@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; margin: 0; line-height: 1.8; }
+        body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; margin: 0; line-height: 1.8; overflow-x: hidden; }
         .top-spacer { height: 60px; background-color: #fff; width: 100%; }
         .hero-banner { background-color: #fade6b; padding: 5rem 2rem; position: relative; overflow: hidden; }
         .hero-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
@@ -23,6 +23,9 @@
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; font-size: 1.05rem; z-index: 2; }
         .omoi-content p { margin-bottom: 1.5rem; }
         
+        /* 「す。」落ち対策：塊で扱う */
+        .no-break { display: inline-block; }
+
         .representative-frame { width: 280px; height: 280px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -37,9 +40,9 @@
         .section-spacer { height: 4rem; clear: both; }
         .title-under-spacer { height: 1.5rem; }
         
-        /* SNSエリア再設計 */
+        /* SNSエリア修正 */
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
-        .latest-info-text { flex: 1; min-width: 280px; }
+        .latest-info-text { flex: 1; min-width: 250px; }
         .sns-icons-wrap { display: flex; gap: 25px; margin-top: 1.5rem; }
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; }
         .sns-link-icon:hover { color: #333; }
@@ -51,12 +54,11 @@
         .site-footer { background-color: #fade6b; padding: 2rem 0; margin-top: 4rem; }
 
         @media screen and (max-width: 1024px) {
-            .main-copy { font-size: 2rem; }
-            .floating-hero-image { width: 300px; top: -50px; right: -50px; }
+            .main-copy { font-size: 2.1rem; }
+            .floating-hero-image { width: 280px; top: -40px; right: -40px; }
             .representative-frame { margin: 2rem auto 0; width: 220px; height: 220px; }
-            .business-circle { width: 240px; height: 240px; }
-            .omoi-content { font-size: 0.95rem; } /* スマホで文字落ちを防ぐ微調整 */
-            .sns-side-img { margin: 1rem auto; display: block; width: 180px; }
+            .business-circle { width: 230px; height: 230px; }
+            .sns-side-img { margin: 1rem 0; width: 160px; }
         }
     </style>
 </head>
@@ -82,11 +84,11 @@
                 <h3 class="title is-4 underline-title">設立のオモイ</h3>
                 <div class="omoi-content mt-5">
                     <p>合同会社あるを創業したきっかけは、<br>
-                    実の母親が金融詐欺に遭い、老後資金を全て失ってしまった事です。</p>
+                    実の母親が金融詐欺に遭い、老後資金を全て失って<span class="no-break">しまった事です。</span></p>
                     
                     <p>自分自身が人材業界にて最高営業責任者していたのも相まって、<br>
                     金融詐欺を通して、<br>
-                    「悪用された営業」というものに対し激しい憤りを感じました。</p>
+                    「悪用された営業」というものに対し激しい憤りを<span class="no-break">感じました。</span></p>
                     
                     <p>世界から詐欺を少しでもなくしたいと思い、<br>
                     弊社では<br>
