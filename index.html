@@ -7,58 +7,72 @@
   <title>合同会社ある | 可能性をつかむ場所がここにある。</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { font-family: 'Kosugi Maru', sans-serif; color: #333; line-height: 1.6; }
-    /* ヒーローセクション（冒頭） */
-    .hero-banner { background-color: #fade6b; padding: 3rem 1.5rem; min-height: 60vh; display: flex; align-items: center; }
-    .company-name { font-size: 1.5rem; font-weight: bold; border-bottom: 2px solid #333; margin-bottom: 1.5rem; display: inline-block; }
-    .main-copy { font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; }
-    @media screen and (min-width: 769px) { .main-copy { font-size: 3.5rem; } }
+    body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; line-height: 1.8; overflow-x: hidden; }
     
-    /* 各セクション共通 */
-    .section-content { padding: 3rem 1.5rem; max-width: 800px; margin: 0 auto; }
-    .section-title { font-size: 1.8rem; font-weight: bold; border-bottom: 2px solid #333; margin-bottom: 1.5rem; display: inline-block; }
-    
-    /* 採用情報のカード風デザイン */
-    .job-card { background: #f9f9f9; border-left: 5px solid #fade6b; padding: 1.5rem; margin-bottom: 1rem; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    
-    /* 画像のレスポンシブ対応 */
-    img { max-width: 100%; height: auto; border-radius: 8px; }
-    .sns-icons img { width: 50px; margin: 0 10px; }
+    /* ヒーローセクション（黄色い部分） */
+    .hero-banner { background-color: #fade6b; padding: 3rem 1.5rem; position: relative; min-height: 50vh; display: flex; align-items: center; }
+    .hero-container { max-width: 900px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
+    .company-name { font-size: 1.5rem; font-weight: bold; border-bottom: 3px solid #333; margin-bottom: 2rem; display: inline-block; }
+    .main-copy { font-size: 2.2rem; font-weight: bold; line-height: 1.3; margin-bottom: 1.5rem; word-break: keep-all; }
+    @media screen and (min-width: 769px) { .main-copy { font-size: 4rem; } }
+
+    /* セクション共通 */
+    .section-wrapper { padding: 4rem 1.5rem; max-width: 800px; margin: 0 auto; }
+    .section-title { font-size: 1.8rem; font-weight: bold; border-bottom: 3px solid #333; margin-bottom: 2rem; display: inline-block; }
+    .text-content { font-size: 1.1rem; text-align: justify; margin-bottom: 1.5rem; }
+
+    /* 採用情報カード */
+    .job-card { background: #fefefe; border-left: 8px solid #fade6b; padding: 1.5rem; margin-bottom: 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+    /* SNSセクション */
+    .sns-section { background-color: #fffaf0; text-align: center; padding: 3rem 1.5rem; }
+    .sns-icons a { margin: 0 15px; color: #fade6b; transition: transform 0.3s; display: inline-block; }
+    .sns-icons a:hover { transform: scale(1.1); }
   </style>
 </head>
 <body>
 
   <section class="hero-banner">
-    <div class="container">
+    <div class="hero-container">
       <div class="company-name">合同会社ある</div>
       <h1 class="main-copy">可能性をつかむ場所が<br>ここにある。</h1>
-      <p>顧客のニーズを理解し、最高品質かつ最高の成果を提供することに全力を尽くします。</p>
+      <p class="is-size-5">顧客のニーズを理解し、最高品質かつ最高の成果を提供することに全力を尽くします。</p>
     </div>
   </section>
 
-  <section class="section-content">
+  <section class="section-wrapper">
     <h2 class="section-title">設立のオモイ</h2>
-    <p>合同会社あるを創業したきっかけは、実の母親が金融詐欺まがいないわゆる、老後資金の搾取に遭ってしまったことがきっかけでした。</p>
-    <p>自分自身が人材業界にて最高営業をしているなかで、世の中の困っている人を一人でも多く救いたい、その可能性を広げる場所を作りたいという思いで設立いたしました。</p>
-  </section>
-
-  <section class="section-content has-text-centered" style="background-color: #fff9e6;">
-    <h2 class="section-title">最新情報</h2>
-    <p>SNSでも情報発信しています。ぜひご覧ください！</p>
-    <div class="sns-icons mt-4">
-      <a href="#"><i class="fab fa-instagram fa-3x"></i></a>
-      <a href="#"><i class="fab fa-youtube fa-3x" style="margin-left: 20px;"></i></a>
+    <div class="text-content">
+      <p>合同会社あるを創業したきっかけは、実の母親が金融詐欺まがいないわゆる、老後資金の搾取に遭ってしまったことがあったからです。</p>
+      <p>自分自身が人材業界にて最高営業成績を出している一方で、身近な大切な人を守れなかったという悔しさが、この会社を立ち上げる原動力となりました。</p>
+      <p>「ある」という名前には、ここにチャンスがある、ここに助けがある、ここに可能性がある、という想いを込めています。</p>
     </div>
   </section>
 
-  <section class="section-content">
+  <section class="sns-section">
+    <h2 class="section-title">最新情報</h2>
+    <p class="mb-4">SNSでも情報を発信しています。ぜひご覧ください！</p>
+    <div class="sns-icons">
+      <a href="#"><i class="fab fa-instagram fa-4x"></i></a>
+      <a href="#"><i class="fab fa-youtube fa-4x"></i></a>
+    </div>
+  </section>
+
+  <section class="section-wrapper">
     <h2 class="section-title">採用情報（求人一覧）</h2>
     <div class="job-card">
       <p><strong>【高収入】オンラインスクールの商談代行をお任せします！</strong></p>
     </div>
     <div class="job-card">
       <p><strong>【高収入／業務委託活躍中】月80万以上可能！商談代行をお任せします！</strong></p>
+    </div>
+    <div class="job-card">
+      <p><strong>［営業経験者歓迎］押し売りなしのクローザー業務</strong></p>
+    </div>
+    <div class="job-card">
+      <p><strong>コーチング経験者歓迎［コーチング型セールス］</strong></p>
     </div>
   </section>
 
