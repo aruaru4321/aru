@@ -1,254 +1,234 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>合同会社ある | 可能性をつかむ場所がここにある。</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合同会社ある | 可能性をつかむ場所がここにある。</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基本設定 */
+        body { 
+            font-family: 'Kosugi Maru', sans-serif; 
+            background-color: #fff; 
+            color: #333; 
+            margin: 0; 
+            line-height: 1.8; 
+            overflow-x: hidden; /* 横揺れ防止 */
+        }
+        .top-spacer { height: 60px; background-color: #fff; width: 100%; }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        /* ヒーローセクション */
+        .hero-banner { 
+            background-color: #fade6b; 
+            padding: 5rem 2rem; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+        .company-name-top { 
+            font-size: 1.7rem !important; 
+            border-bottom: 2px solid #333; 
+            display: inline-block !important; 
+            margin-bottom: 2.5rem; 
+            padding-bottom: 2px; 
+            font-weight: bold; 
+        }
+        .main-copy { font-size: 2.8rem; font-weight: bold; line-height: 1.4; margin-bottom: 2rem; letter-spacing: 0.05em; }
+        .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
+        .floating-hero-image { 
+            position: absolute; 
+            right: -30px; 
+            top: -100px; 
+            width: 400px; 
+            height: auto; 
+            z-index: 1; 
+            mix-blend-mode: multiply; 
+            pointer-events: none; 
+        }
 
-<style>
-/* =====================
-   Base
-===================== */
-body {
-  font-family: 'Kosugi Maru', sans-serif;
-  margin: 0;
-  color: #333;
-  line-height: 1.8;
-  overflow-x: hidden;
-}
+        /* 共通設定 */
+        .section-spacer { height: 4rem; clear: both; }
+        .title-under-spacer { height: 1.5rem; }
+        .underline-title { display: inline-block !important; border-bottom: 2px solid #333; margin-bottom: 0px !important; padding-bottom: 5px; line-height: 1.2; }
 
-/* =====================
-   Hero
-===================== */
-.hero-banner {
-  background-color: #fade6b;
-  padding: 5rem 1.5rem;
-  position: relative;
-}
+        /* 設立のオモイ */
+        .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
+        .omoi-container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            display: flex; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 40px;
+        }
+        .omoi-text-wrapper { flex: 1; min-width: 300px; z-index: 2; }
+        .omoi-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+        
+        .representative-frame { 
+            width: 280px; 
+            height: 280px; 
+            margin: 0 auto; 
+            border-radius: 50%; 
+            border: 6px solid #fade6b; 
+            overflow: hidden; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #fff; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+            z-index: 1; 
+        }
+        .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* 事業内容 */
+        .card-container { max-width: 800px; margin: 0 auto; padding: 0 15px; }
+        .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
+        .business-circle { 
+            background: #fade6b; 
+            width: 240px; 
+            height: 240px; 
+            border-radius: 50%; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 20px; 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05); 
+        }
+        .business-circle strong { font-size: 1.1rem; display: block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+        
+        /* SNS・最新情報 */
+        .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
+        .latest-info-text { flex: 1; min-width: 250px; }
+        .sns-icons-wrap { display: flex; gap: 30px; margin-top: 1.5rem; }
+        .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; }
+        .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
-.hero-container {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-}
+        /* 採用・フォーム */
+        .recruit-link { 
+            display: block; 
+            background: #f9f9f9; 
+            padding: 1.2rem; 
+            border-radius: 10px; 
+            margin-bottom: 10px; 
+            border-left: 5px solid #fade6b; 
+            transition: 0.3s; 
+            color: #333; 
+            text-decoration: none; 
+        }
+        .recruit-link:hover { background: #f0f0f0; }
+        .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
+        .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; cursor: pointer; height: 3.5rem; }
 
-.company-name-top {
-  font-size: 1.6rem;
-  border-bottom: 2px solid #333;
-  display: inline-block;
-  margin-bottom: 2.5rem;
-  font-weight: bold;
-}
+        /* --- モバイル最適化 (Media Query) --- */
+        @media screen and (max-width: 768px) {
+            .hero-banner { padding: 3rem 1.5rem; }
+            .main-copy { font-size: 1.8rem; }
+            .sub-copy { font-size: 1rem; }
+            .floating-hero-image { width: 220px; top: -40px; right: -60px; opacity: 0.6; }
 
-.main-copy {
-  font-size: clamp(1.9rem, 5vw, 2.8rem);
-  font-weight: bold;
-  line-height: 1.35;
-  margin-bottom: 1.8rem;
-}
+            .omoi-container { flex-direction: column-reverse; text-align: left; }
+            .representative-frame { width: 220px; height: 220px; margin-bottom: 1rem; }
+            
+            /* スマホで不自然な改行を無効化 */
+            br { display: none; }
+            .main-copy br { display: block; } /* メインコピーだけは改行維持 */
 
-.sub-copy {
-  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-  max-width: 38ch;
-}
-
-/* PC専用改行 */
-.pc-only {
-  display: inline;
-}
-
-.floating-hero-image {
-  position: absolute;
-  right: -30px;
-  top: -80px;
-  width: 380px;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
-/* =====================
-   想い
-===================== */
-.omoi-section {
-  padding: 5rem 1.5rem 1rem;
-}
-
-.omoi-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  gap: 2rem;
-}
-
-.omoi-text-wrapper {
-  flex: 1;
-}
-
-.omoi-content p {
-  margin-bottom: 1.4rem;
-}
-
-.prevent-break {
-  white-space: nowrap;
-}
-
-.representative-frame {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  border: 6px solid #fade6b;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.representative-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* =====================
-   事業内容
-===================== */
-.card-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.circle-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.business-circle {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: #fade6b;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-}
-
-.business-circle strong {
-  display: block;
-  border-bottom: 1px solid #333;
-  margin-bottom: 0.5rem;
-}
-
-/* =====================
-   SNS
-===================== */
-.latest-info-flex {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.sns-link-icon {
-  font-size: 48px;
-  color: #fade6b;
-}
-
-/* =====================
-   Footer
-===================== */
-footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* =====================
-   Responsive
-===================== */
-@media screen and (max-width: 768px) {
-
-  .floating-hero-image {
-    position: static;
-    display: block;
-    margin: 2rem auto 0;
-    width: 260px;
-  }
-
-  .pc-only {
-    display: none;
-  }
-
-  .prevent-break {
-    white-space: normal;
-  }
-
-  .omoi-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .representative-frame {
-    width: 220px;
-    height: 220px;
-    margin-top: 1.5rem;
-  }
-
-  .latest-info-flex {
-    flex-direction: column;
-  }
-}
-</style>
+            .latest-info-flex { flex-direction: column; align-items: center; text-align: center; }
+            .sns-icons-wrap { justify-content: center; }
+            .sns-side-img { display: none; } /* スマホでは画像を消してスッキリ */
+            
+            .contact-form { padding: 1.5rem; }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="top-spacer"></div>
 
-<section class="hero-banner">
-  <div class="hero-container">
-    <div class="company-name-top">合同会社ある</div>
+    <section class="hero-banner">
+        <div class="hero-container">
+            <div class="hero-text-content">
+                <div class="company-name-top">合同会社ある</div>
+                <h1 class="main-copy">可能性をつかむ場所が<br>ここにある。</h1>
+                <p class="sub-copy">顧客のニーズを理解し、最高品質かつ最高の成果を提供することに全力を尽くします。</p>
+            </div>
+            <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000" class="floating-hero-image" alt="背景装飾">
+        </div>
+    </section>
 
-    <h1 class="main-copy">
-      可能性をつかむ場所が<br>
-      ここにある。
-    </h1>
+    <section class="omoi-section">
+        <div class="omoi-container">
+            <div class="omoi-text-wrapper">
+                <h3 class="title is-4 underline-title">設立のオモイ</h3>
+                <div class="omoi-content mt-5">
+                    <p>合同会社あるを創業したきっかけは、実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
+                    <p>自分自身が人材業界にて最高営業責任者していたのも相まって、金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
+                    <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
+                    <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
+                    <strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
+                </div>
+            </div>
+            <div class="representative-frame">
+                <img src="https://drive.google.com/thumbnail?id=1xHViutep87Injjbt8FxJLeXVTu3l7CQJ&sz=w1000" alt="代表写真">
+            </div>
+        </div>
 
-    <p class="sub-copy">
-      顧客のニーズを理解し、<br class="pc-only">
-      最高品質かつ最高の成果を提供することに全力を尽くします。
-    </p>
+        <div class="section-spacer"></div>
 
-    <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000"
-         class="floating-hero-image">
-  </div>
-</section>
+        <div class="card-container">
+            <h3 class="title is-4 underline-title">事業内容</h3>
+            <div class="title-under-spacer"></div>
+            <div class="circle-container">
+                <div class="business-circle"><strong>①営業代行事業</strong><p>全フェーズを徹底的にサポートします。</p></div>
+                <div class="business-circle"><strong>②ラポクロ</strong><p>オンラインセールス養成スクールです。</p></div>
+                <div class="business-circle"><strong>③営業コーチング</strong><p>客観的な分析・助言を提供します。</p></div>
+            </div>
 
-<section class="omoi-section">
-  <div class="omoi-container">
-    <div class="omoi-text-wrapper">
-      <h3 class="title is-4">設立のオモイ</h3>
-      <div class="omoi-content mt-4">
-        <p>合同会社あるを創業したきっかけは、</p>
-        <p class="prevent-break">
-          実の母親が金融詐欺に遭い、老後資金を全て失ったことです。
-        </p>
-      </div>
-    </div>
+            <div class="section-spacer"></div>
 
-    <div class="representative-frame">
-      <img src="https://drive.google.com/thumbnail?id=1xHViutep87Injjbt8FxJLeXVTu3l7CQJ&sz=w1000">
-    </div>
-  </div>
-</section>
+            <h3 class="title is-4 underline-title">最新情報</h3>
+            <div class="latest-info-flex mt-4">
+                <div class="latest-info-text">
+                    <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
+                    <div class="sns-icons-wrap">
+                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram sns-link-icon"></i></a>
+                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube sns-link-icon"></i></a>
+                    </div>
+                </div>
+                <img src="https://drive.google.com/thumbnail?id=1wGGsfIHKhkYWlPFhbPLF4icnqUkRAB-K&sz=w500" class="sns-side-img" alt="SNSイメージ">
+            </div>
 
-<footer>
-  © 2026 <strong>合同会社ある</strong>
-</footer>
+            <div class="section-spacer"></div>
 
+            <h3 class="title is-4 underline-title">採用情報</h3>
+            <div class="title-under-spacer"></div>
+            <div class="mb-6">
+                <a href="https://talent.aw-anotherworks.com/projects/92086" target="_blank" class="recruit-link">【高収入】オンラインスクールの商談代行をお任せします！</a>
+                <a href="https://talent.aw-anotherworks.com/projects/90267" target="_blank" class="recruit-link">【高収入/業務委託活躍中】月80万以上可能！商談代行をお任せします！</a>
+                <a href="https://talent.aw-anotherworks.com/projects/90256" target="_blank" class="recruit-link">[営業経験者歓迎] 押し売りなしのクローザー業務</a>
+                <a href="https://talent.aw-anotherworks.com/projects/90255" target="_blank" class="recruit-link">コーチング経験者歓迎 [コーチング型セールス] 完全リモート</a>
+            </div>
+
+            <h3 class="title is-4 underline-title">お問い合わせ</h3>
+            <div class="title-under-spacer"></div>
+            <div class="contact-form">
+                <form action="mailto:contact@aru-info.com" method="post" enctype="text/plain">
+                    <div class="field"><label class="label">お名前</label><div class="control"><input class="input" name="Name" type="text" placeholder="例：山田 太郎" required></div></div>
+                    <div class="field"><label class="label">会社名</label><div class="control"><input class="input" name="Company" type="text" placeholder="例：合同会社ある"></div></div>
+                    <div class="field"><label class="label">メールアドレス</label><div class="control"><input class="input" name="Email" type="email" placeholder="例：sample@example.com" required></div></div>
+                    <div class="field"><label class="label">電話番号</label><div class="control"><input class="input" name="Phone" type="tel" placeholder="例：03-1234-5678"></div></div>
+                    <div class="field"><label class="label">問い合わせ内容</label><div class="control"><textarea class="textarea" name="Message" placeholder="ご相談内容をご記入ください" required></textarea></div></div>
+                    <div class="control mt-5"><button type="submit" class="button is-fullwidth is-primary-custom">上記の内容でメールを送信する</button></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer has-text-centered" style="background: #fff; padding: 3rem 1.5rem;">
+        <p>© 2026 <strong>合同会社ある</strong></p>
+    </footer>
 </body>
 </html>
