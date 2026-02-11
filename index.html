@@ -34,6 +34,9 @@
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
         .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
         .business-circle strong { font-size: 1.1rem; display: block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+        /* ラポクロリンク用 */
+        .business-circle a { color: inherit; text-decoration: none; }
+        .business-circle a:hover { opacity: 0.7; }
         
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
@@ -64,7 +67,7 @@
             <div class="hero-text-content">
                 <div class="company-name-top">合同会社ある</div>
                 <h1 class="main-copy">可能性をつかむ場所が<br>ここにある。</h1>
-                <p class="sub-copy">顧客のニーズを理解し、最高品質かつ最高の成果を提供することに全力を尽くします。</p>
+                <p class="sub-copy">顧客のニーズを理解し、<br>最高品質かつ最高の成果を提供することに全力を尽くします。</p>
             </div>
             <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000" class="floating-hero-image">
         </div>
@@ -78,8 +81,7 @@
                     <p>合同会社あるを創業したきっかけは、</p>
                     <p class="prevent-break">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
                     
-                    <p>自分自身が人材業界にて最高営業責任者していたのも相まって、<br>
-                    金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
+                    <p style="white-space: nowrap;">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
                     
                     <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
                     <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
@@ -98,7 +100,7 @@
             <div class="title-under-spacer"></div>
             <div class="circle-container">
                 <div class="business-circle"><strong>①営業代行事業</strong><p>全フェーズを徹底的にサポートします。</p></div>
-                <div class="business-circle"><strong>②ラポクロ</strong><p>オンラインセールス養成スクールです。</p></div>
+                <div class="business-circle"><a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank"><strong>②ラポクロ</strong><p>オンラインセールス養成スクールです。</p></a></div>
                 <div class="business-circle"><strong>③営業コーチング</strong><p>客観的な分析・助言を提供します。</p></div>
             </div>
 
@@ -145,4 +147,3 @@
     <footer class="site-footer has-text-centered"><p>© 2026 <strong>合同会社ある</strong></p></footer>
 </body>
 </html>
-
