@@ -62,11 +62,13 @@
 
         /* 最新情報 SNS */
         .sns-icons-wrap { display: flex; align-items: center; gap: 15px; margin-top: 1.5rem; }
+        /* アイコンが消える原因になりやすい設定を微調整 */
         .sns-custom-btn { 
             width: 55px; height: 55px; border-radius: 12px; 
             background-color: #fade6b; color: #333 !important;
             display: flex; justify-content: center; align-items: center;
-            font-size: 28px; transition: 0.3s;
+            font-size: 32px; transition: 0.3s;
+            text-decoration: none !important;
         }
         .sns-custom-btn:hover { transform: translateY(-3px); opacity: 0.8; }
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
@@ -104,7 +106,6 @@
             .line-6b { margin-bottom: 0em !important; } 
             .section-spacer { height: 4rem; }
             
-            /* スマホではホバー効果を無効化（誤操作防止） */
             .business-circle.rappoclo-hover:hover {
                 transform: none;
                 box-shadow: 0 6px 15px rgba(0,0,0,0.05);
@@ -180,8 +181,12 @@
                 <div class="latest-info-text">
                     <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
                     <div class="sns-icons-wrap">
-                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank" class="sns-custom-btn">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank" class="sns-custom-btn">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
                         <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
                             <img src="https://drive.google.com/thumbnail?id=1Hi--fUVhC6Ta1rAfqePTZN7hen_G-hiq&sz=w200" class="rappoclo-sns-logo" alt="ラポクロ">
                         </a>
