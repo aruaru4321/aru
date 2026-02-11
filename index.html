@@ -23,7 +23,12 @@
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; margin-right: 15px; }
-        .omoi-content p { margin-bottom: 1.2rem; line-height: 1.8; } 
+        .omoi-content p { margin: 0; padding: 0; line-height: 1.4; } 
+
+        /* 行間指定クラス */
+        .sp-br { display: none; } /* 基本は非表示（スマホのみ表示） */
+        .gap-08 { margin-bottom: 0.8em !important; }
+        .gap-20 { margin-bottom: 2.0em !important; }
         
         /* 代表写真フレーム */
         .representative-frame { 
@@ -59,7 +64,6 @@
             transition: 0.3s;
             text-decoration: none !important;
         }
-        /* SVGの色を白に変更 */
         .sns-custom-btn svg { width: 30px; height: 30px; fill: #ffffff; }
         .sns-custom-btn:hover { transform: translateY(-3px); opacity: 0.8; }
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
@@ -87,6 +91,10 @@
             .recruit-link { font-size: 0.85rem; padding: 1rem; }
             .sub-copy { font-size: 0.95rem; }
             .section-spacer { height: 4rem; }
+
+            /* スマホ用改行制御 */
+            .pc-only { display: none; }
+            .sp-br { display: block; }
         }
     </style>
 </head>
@@ -107,9 +115,21 @@
             <div class="omoi-text-wrapper">
                 <h3 class="title is-4 underline-title">設立のオモイ</h3>
                 <div class="omoi-content mt-5">
-                    <p>合同会社あるを創業したきっかけは、実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
-                    <p>金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
-                    <p>世界から詐欺を少しでもなくしたいと思い、弊社では<strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
+                    <p class="gap-08">合同会社あるを創業したきっかけは、</p>
+                    <p class="gap-20">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
+                    
+                    <p class="pc-only gap-20">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
+                    
+                    <p class="sp-br gap-08">金融詐欺を通して</p>
+                    <p class="sp-br gap-20">「悪用された営業」に対し激しい憤りを感じました。</p>
+                    
+                    <p class="gap-08">世界から詐欺を少しでもなくしたいと思い、弊社では</p>
+                    <p class="gap-08"><strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、</p>
+                    
+                    <p class="pc-only"><strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
+                    
+                    <p class="sp-br gap-08"><strong>「何があってもお客様の味方」</strong></p>
+                    <p class="sp-br">というマインドを遵守しています。</p>
                 </div>
             </div>
             <div class="representative-frame">
