@@ -34,12 +34,12 @@
         .line-5 { margin-bottom: 0.8em !important; }
         .line-6 { margin-bottom: 0em !important; }
 
-        /* 代表写真フレーム */
+        /* 代表写真フレーム（PC版 250px / 位置微調整） */
         .representative-frame { 
             width: 250px; height: 250px; border-radius: 50%; border: 6px solid #fade6b; 
             overflow: hidden; display: flex; justify-content: center; align-items: center; 
             background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0;
-            margin-bottom: -50px;
+            margin-bottom: -50px; 
         }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -47,27 +47,18 @@
         .card-container { max-width: 800px; margin: 0 auto; position: relative; padding: 0; }
         .underline-title { display: inline-block !important; border-bottom: 2px solid #333; margin-bottom: 0px !important; padding-bottom: 5px; line-height: 1.2; }
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
-        .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); transition: 0.3s ease; }
-        
-        /* ラポクロのみのホバー効果（PC用） */
-        .business-circle.rappoclo-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-            background: #ffeb85; /* 少し明るい黄色に */
-        }
-
+        .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
         .business-circle strong { font-size: 1.1rem; display: inline-block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
         .business-circle a { color: inherit; text-decoration: none; display: flex; flex-direction: column; align-items: center; width: 100%; }
         .check-link { background: #fff; color: #333; padding: 2px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
 
         /* 最新情報 SNS */
         .sns-icons-wrap { display: flex; align-items: center; gap: 15px; margin-top: 1.5rem; }
-        /* アイコンが消える原因になりやすい設定を微調整 */
         .sns-custom-btn { 
             width: 55px; height: 55px; border-radius: 12px; 
             background-color: #fade6b; color: #333 !important;
             display: flex; justify-content: center; align-items: center;
-            font-size: 32px; transition: 0.3s;
+            font-size: 28px; transition: 0.3s;
             text-decoration: none !important;
         }
         .sns-custom-btn:hover { transform: translateY(-3px); opacity: 0.8; }
@@ -105,12 +96,6 @@
             .line-6a { margin-bottom: 0.8em !important; }
             .line-6b { margin-bottom: 0em !important; } 
             .section-spacer { height: 4rem; }
-            
-            .business-circle.rappoclo-hover:hover {
-                transform: none;
-                box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-                background: #fade6b;
-            }
         }
     </style>
 </head>
@@ -161,7 +146,7 @@
                     <strong>①営業代行事業</strong>
                     <p>導線計画から<br>クロージングまでサポート</p>
                 </div>
-                <div class="business-circle rappoclo-hover">
+                <div class="business-circle">
                     <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
                         <strong>②ラポクロ</strong>
                         <p>オンラインセールス<br>養成スクール</p>
@@ -181,12 +166,8 @@
                 <div class="latest-info-text">
                     <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
                     <div class="sns-icons-wrap">
-                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank" class="sns-custom-btn">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank" class="sns-custom-btn">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
+                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-youtube"></i></a>
                         <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
                             <img src="https://drive.google.com/thumbnail?id=1Hi--fUVhC6Ta1rAfqePTZN7hen_G-hiq&sz=w200" class="rappoclo-sns-logo" alt="ラポクロ">
                         </a>
