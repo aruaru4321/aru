@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 共通設定 */
-        body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
+        /* 全体共通：フォントを強力に固定 */
+        * { font-family: 'Kosugi Maru', sans-serif !important; }
+        body { background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
         
         /* ヒーローバナー */
         .hero-banner { background-color: #fade6b; padding: 5rem 2rem; position: relative; overflow: hidden; margin-top: 0; }
@@ -20,7 +21,6 @@
         .floating-hero-image { position: absolute; right: -30px; top: -100px; width: 400px; height: auto; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
         
         /* 設立のオモイ */
-        .prevent-break { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; margin-right: 15px; }
@@ -35,21 +35,18 @@
         .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
         .business-circle strong { font-size: 1.1rem; display: inline-block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
         .business-circle a { color: inherit; text-decoration: none; display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .business-circle a:hover { opacity: 0.8; transform: scale(1.03); transition: 0.3s; }
         .check-link { background: #fff; color: #333; padding: 2px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
 
-        /* 最新情報 */
+        /* 最新情報 SNS */
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
         .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; vertical-align: middle; }
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
-        .rappoclo-sns-logo:hover { opacity: 0.7; }
         .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
         /* 採用情報 */
         .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: 0.3s; color: #333; text-decoration: none; }
-        .recruit-link:hover { background: #f0f0f0; border-left-color: #333; padding-left: 1.5rem; }
         
         /* フォーム */
         .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
@@ -61,19 +58,17 @@
         /* --- スマホ専用レスポンシブ微調整 --- */
         @media screen and (max-width: 1024px) {
             .main-copy { font-size: 2rem; }
-            .prevent-break { font-size: 0.85rem; white-space: normal; } /* 遵守していますの1行化用 */
             .sns-side-img { display: none; }
             .omoi-text-wrapper { margin-right: 0; }
             
-            /* 【修正3】社長の写真を円形ボタンと同じ250pxに拡大 */
+            /* 【修正3】社長の写真を250pxに拡大 */
             .representative-frame { margin: 2rem auto 0; width: 250px; height: 250px; }
             
-            /* 【修正1】冒頭画像をさらに右へ。透明度も維持。 */
+            /* 【修正1】冒頭画像をさらに右へ。透明度も40%で維持。 */
             .floating-hero-image { opacity: 0.4; right: -100px; }
             
-            /* 【修正2】採用情報の1行化 */
+            /* 【修正】採用情報の1行化 */
             .recruit-link { font-size: 0.85rem; padding: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
             .sub-copy { font-size: 0.95rem; }
         }
     </style>
@@ -102,7 +97,7 @@
                     
                     <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
                     <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
-                    <strong class="prevent-break">「何があってもお客様の味方」というマインドを遵守しています。</strong></p>
+                    <strong>「何があってもお客様の味方」<br class="is-hidden-tablet">というマインドを遵守しています。</strong></p>
                 </div>
             </div>
             <div class="representative-frame">
@@ -111,7 +106,7 @@
         </div>
 
         <div class="section-spacer"></div>
-        
+
         <div class="card-container">
             <h3 class="title is-4 underline-title">事業内容</h3>
             <div class="title-under-spacer"></div>
