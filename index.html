@@ -8,15 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 冒頭の余白を削除し、スムーズな表示に */
         body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
+        
+        /* ヒーローバナーが一番上から始まるように調整 */
         .hero-banner { background-color: #fade6b; padding: 5rem 2rem; position: relative; overflow: hidden; margin-top: 0; }
+        
         .hero-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
         .company-name-top { font-size: 1.7rem !important; border-bottom: 2px solid #333; display: inline-block !important; margin-bottom: 2.5rem; padding-bottom: 2px; font-weight: bold; }
         .main-copy { font-size: 2.8rem; font-weight: bold; line-height: 1.4; margin-bottom: 2rem; letter-spacing: 0.05em; }
-        
-        /* PC用サブコピー */
-        .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; white-space: normal; }
-
+        .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
         .floating-hero-image { position: absolute; right: -30px; top: -100px; width: 400px; height: auto; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
         
         .prevent-break { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -44,6 +45,7 @@
         .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; vertical-align: middle; }
         
+        /* ラポクロロゴ：SNSに馴染むよう背景を透明・枠なしに */
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
         .rappoclo-sns-logo:hover { opacity: 0.7; }
 
@@ -58,36 +60,12 @@
         .section-spacer { height: 4rem; clear: both; }
         .title-under-spacer { height: 1.5rem; }
 
-        /* --- スマホ専用設定（ここが重要！） --- */
         @media screen and (max-width: 1024px) {
-            .main-copy { font-size: 2rem; position: relative; z-index: 3; }
-            
-            /* スマホでの画像被り対策：画像を薄くするか、位置を調整 */
-            .floating-hero-image { 
-                width: 250px; 
-                right: -50px; 
-                top: 0px; 
-                opacity: 0.6; /* 文字を読みやすくするために少し薄く */
-                z-index: 1; 
-            }
-            
-            /* スマホでの改行対策：フォントサイズを微調整して「る。落ち」を防ぐ */
-            .sub-copy { 
-                font-size: 0.95rem; 
-                line-height: 1.6; 
-                z-index: 3; 
-                position: relative;
-                word-break: keep-all; /* 単語の途中で改行させない */
-                overflow-wrap: normal;
-            }
-            
+            .main-copy { font-size: 2rem; }
             .prevent-break { font-size: 0.9rem; white-space: normal; }
             .sns-side-img { display: none; }
             .omoi-text-wrapper { margin-right: 0; }
             .representative-frame { margin: 2rem auto 0; width: 190px; height: 190px; }
-            
-            /* スマホでも文字色をはっきりさせる（必要に応じて） */
-            .main-copy, .sub-copy, .company-name-top { color: #333 !important; }
         }
     </style>
 </head>
@@ -97,7 +75,7 @@
             <div class="hero-text-content">
                 <div class="company-name-top">合同会社ある</div>
                 <h1 class="main-copy">可能性をつかむ場所が<br>ここにある。</h1>
-                <p class="sub-copy">顧客のニーズを理解し、最高品質かつ最高の成果を<br class="is-hidden-mobile">提供することに全力を尽くします。</p>
+                <p class="sub-copy">顧客のニーズを理解し、<br>最高品質かつ最高の成果を提供することに全力を尽くします。</p>
             </div>
             <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000" class="floating-hero-image">
         </div>
@@ -110,7 +88,9 @@
                 <div class="omoi-content mt-5">
                     <p>合同会社あるを創業したきっかけは、</p>
                     <p class="prevent-break">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
+                    
                     <p style="white-space: nowrap;">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
+                    
                     <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
                     <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
                     <strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
