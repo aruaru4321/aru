@@ -22,9 +22,11 @@
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         
+        /* 文字部分の幅を確保しつつ、右側に余白を持たせる */
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; margin-right: 30px; }
         .omoi-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
         
+        /* 代表写真のサイズ調整（200px） */
         .representative-frame { width: 200px; height: 200px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0; }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -99,13 +101,25 @@
             <h3 class="title is-4 underline-title">事業内容</h3>
             <div class="title-under-spacer"></div>
             <div class="circle-container">
-                <div class="business-circle"><strong>①営業代行事業</strong><p>導線計画から<br>クロージングまでサポート</p></div>
-                <div class="business-circle"><a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank"><strong>②ラポクロ</strong><p>自分らしい働き方がここにある。<br>オンラインセールス養成スクール</p></a></div>
-                <div class="business-circle"><strong>③営業コーチング事業</strong><p>売り上げ向上に必要な<br>スキル＆客観視を提供</p></div>
+                <div class="business-circle">
+                    <strong>①営業代行事業</strong>
+                    <p>導線計画から<br>クロージングまでサポート</p>
+                </div>
+                
+                <div class="business-circle">
+                    <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
+                        <strong>②ラポクロ</strong>
+                        <p>オンラインセールス<br>養成スクール</p>
+                    </a>
+                </div>
+                
+                <div class="business-circle">
+                    <strong>③営業コーチング事業</strong>
+                    <p>売り上げ向上に必要な<br>スキル＆客観視を提供</p>
+                </div>
             </div>
 
             <div class="section-spacer"></div>
-
             <h3 class="title is-4 underline-title">最新情報</h3>
             <div class="latest-info-flex mt-4">
                 <div class="latest-info-text">
