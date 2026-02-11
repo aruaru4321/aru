@@ -61,18 +61,19 @@
         /* --- スマホ専用レスポンシブ微調整 --- */
         @media screen and (max-width: 1024px) {
             .main-copy { font-size: 2rem; }
-            .prevent-break { font-size: 0.9rem; white-space: normal; }
+            .prevent-break { font-size: 0.85rem; white-space: normal; } /* 遵守していますの1行化用 */
             .sns-side-img { display: none; }
             .omoi-text-wrapper { margin-right: 0; }
-            .representative-frame { margin: 2rem auto 0; width: 190px; height: 190px; }
             
-            /* 【修正点1】冒頭画像の透明度を下げる */
-            .floating-hero-image { opacity: 0.4; }
+            /* 【修正3】社長の写真を円形ボタンと同じ250pxに拡大 */
+            .representative-frame { margin: 2rem auto 0; width: 250px; height: 250px; }
             
-            /* 【修正点2】採用情報の文字サイズを調整し、1行に収める */
+            /* 【修正1】冒頭画像をさらに右へ。透明度も維持。 */
+            .floating-hero-image { opacity: 0.4; right: -100px; }
+            
+            /* 【修正2】採用情報の1行化 */
             .recruit-link { font-size: 0.85rem; padding: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-            /* 【修正点3】冒頭サブコピーの「ます。」落ち対策 */
             .sub-copy { font-size: 0.95rem; }
         }
     </style>
@@ -95,11 +96,13 @@
                 <h3 class="title is-4 underline-title">設立のオモイ</h3>
                 <div class="omoi-content mt-5">
                     <p>合同会社あるを創業したきっかけは、</p>
-                    <p class="prevent-break">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
-                    <p style="white-space: nowrap;">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
+                    <p>実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
+                    
+                    <p>金融詐欺を通して<br class="is-hidden-tablet">「悪用された営業」に対し激しい憤りを感じました。</p>
+                    
                     <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
                     <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
-                    <strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
+                    <strong class="prevent-break">「何があってもお客様の味方」というマインドを遵守しています。</strong></p>
                 </div>
             </div>
             <div class="representative-frame">
@@ -108,7 +111,7 @@
         </div>
 
         <div class="section-spacer"></div>
-
+        
         <div class="card-container">
             <h3 class="title is-4 underline-title">事業内容</h3>
             <div class="title-under-spacer"></div>
@@ -165,4 +168,16 @@
             <div class="contact-form">
                 <form action="mailto:contact@aru-info.com" method="post" enctype="text/plain">
                     <div class="field"><label class="label">お名前</label><div class="control"><input class="input" name="Name" type="text" placeholder="例：山田 太郎" required></div></div>
-                    <div class="
+                    <div class="field"><label class="label">会社名</label><div class="control"><input class="input" name="Company" type="text" placeholder="例：合同会社ある"></div></div>
+                    <div class="field"><label class="label">メールアドレス</label><div class="control"><input class="input" name="Email" type="email" placeholder="例：sample@example.com" required></div></div>
+                    <div class="field"><label class="label">電話番号</label><div class="control"><input class="input" name="Phone" type="tel" placeholder="例：03-1234-5678"></div></div>
+                    <div class="field"><label class="label">問い合わせ内容</label><div class="control"><textarea class="textarea" name="Message" placeholder="ご相談内容をご記入ください" required></textarea></div></div>
+                    <div class="control mt-5"><button type="submit" class="button is-fullwidth is-primary-custom">上記の内容でメールを送信する</button></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer has-text-centered"><p>© 2026 <strong>合同会社ある</strong></p></footer>
+</body>
+</html>
