@@ -25,7 +25,8 @@
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; margin-right: 30px; }
         .omoi-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
         
-        .representative-frame { width: 200px; height: 200px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0; }
+        /* 修正：代表写真を 220px に拡大して「離れすぎ感」を解消 */
+        .representative-frame { width: 220px; height: 220px; margin-left: auto; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0; }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
         
         .card-container { max-width: 800px; margin: 0 auto; position: relative; padding: 0; }
@@ -33,12 +34,15 @@
         
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
         .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
+        
+        /* 文字幅に合わせた下線にするための修正 */
         .business-circle strong { font-size: 1.1rem; display: inline-block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
-        .business-circle a { color: inherit; text-decoration: none; display: flex; flex-direction: column; align-items: center; }
-        .business-circle a:hover { opacity: 0.8; transform: scale(1.05); transition: 0.3s; }
+        
+        .business-circle a { color: inherit; text-decoration: none; display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .business-circle a:hover { opacity: 0.8; transform: scale(1.03); transition: 0.3s; }
         
         /* Checkリンクのデザイン */
-        .check-link { background: #fff; color: #333; padding: 2px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
+        .check-link { background: #fff; color: #333; padding: 2px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
 
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
@@ -59,7 +63,7 @@
             .prevent-break { font-size: 0.9rem; white-space: normal; }
             .sns-side-img { display: none; }
             .omoi-text-wrapper { margin-right: 0; }
-            .representative-frame { margin: 2rem auto 0; width: 180px; height: 180px; }
+            .representative-frame { margin: 2rem auto 0; width: 190px; height: 190px; }
         }
     </style>
 </head>
