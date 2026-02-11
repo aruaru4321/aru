@@ -24,14 +24,14 @@
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; margin-right: 15px; }
-        .omoi-content p { margin: 0; padding: 0; line-height: 1.4; } /* 行間を一度リセット */
+        .omoi-content p { margin: 0; padding: 0; line-height: 1.4; } 
         
-        /* PC用マージン設定 */
-        .line-1 { margin-bottom: 0.1em !important; }
-        .line-2 { margin-bottom: 1.0em !important; }
-        .line-3 { margin-bottom: 1.0em !important; }
-        .line-4 { margin-bottom: 0.5em !important; }
-        .line-5 { margin-bottom: 0.5em !important; }
+        /* PC用：1行＝1.0em / 2行＝2.0em */
+        .line-1 { margin-bottom: 1.0em !important; }
+        .line-2 { margin-bottom: 2.0em !important; }
+        .line-3 { margin-bottom: 2.0em !important; }
+        .line-4 { margin-bottom: 1.0em !important; }
+        .line-5 { margin-bottom: 1.0em !important; }
         .line-6 { margin-bottom: 0em !important; }
 
         .representative-frame { width: 220px; height: 220px; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0; }
@@ -80,15 +80,15 @@
             .recruit-link { font-size: 0.85rem; padding: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
             .sub-copy { font-size: 0.95rem; }
 
-            /* 【修正】スマホ専用の行間設定 */
-            .line-1 { margin-bottom: 0.5em !important; }
-            .line-2 { margin-bottom: 1.0em !important; }
-            .line-3a { margin-bottom: 0.5em !important; } /* 金融詐欺を通して */
-            .line-3b { margin-bottom: 1.0em !important; } /* 「悪用された営業」... */
-            .line-4 { margin-bottom: 0.5em !important; }
-            .line-5 { margin-bottom: 0.5em !important; }
-            .line-6a { margin-bottom: 0.5em !important; } /* 「何があってもお客様の味方」 */
-            .line-6b { margin-bottom: 0em !important; }   /* というマインドを遵守... */
+            /* スマホ用：1行＝1.0em / 2行＝2.0em */
+            .line-1 { margin-bottom: 1.0em !important; }
+            .line-2 { margin-bottom: 2.0em !important; }
+            .line-3a { margin-bottom: 1.0em !important; } /* 金融詐欺を通して */
+            .line-3b { margin-bottom: 2.0em !important; } /* 「悪用された営業」... */
+            .line-4 { margin-bottom: 1.0em !important; }
+            .line-5 { margin-bottom: 1.0em !important; }
+            .line-6a { margin-bottom: 1.0em !important; } /* 「何があってもお客様の味方」 */
+            .line-6b { margin-bottom: 0em !important; } 
         }
     </style>
 </head>
