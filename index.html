@@ -8,20 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 冒頭の余白を削除し、スムーズな表示に */
         body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
         
-        /* ヒーローバナーが一番上から始まるように調整 */
         .hero-banner { background-color: #fade6b; padding: 5rem 2rem; position: relative; overflow: hidden; margin-top: 0; }
-        
         .hero-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
         .company-name-top { font-size: 1.7rem !important; border-bottom: 2px solid #333; display: inline-block !important; margin-bottom: 2.5rem; padding-bottom: 2px; font-weight: bold; }
-        .main-copy { font-size: 2.8rem; font-weight: bold; line-height: 1.4; margin-bottom: 2rem; letter-spacing: 0.05em; }
-        .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
+        
+        /* メインコピー設定 */
+        .main-copy { font-size: 2.8rem; font-weight: bold; line-height: 1.4; margin-bottom: 2rem; letter-spacing: 0.05em; position: relative; z-index: 3; }
+        .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; position: relative; z-index: 3; }
+
+        /* PCでのイラスト位置 */
         .floating-hero-image { position: absolute; right: -30px; top: -100px; width: 400px; height: auto; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
         
         .prevent-break { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+        /* オモイセクション */
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; margin-right: 15px; }
@@ -33,6 +35,7 @@
         .card-container { max-width: 800px; margin: 0 auto; position: relative; padding: 0; }
         .underline-title { display: inline-block !important; border-bottom: 2px solid #333; margin-bottom: 0px !important; padding-bottom: 5px; line-height: 1.2; }
         
+        /* 事業内容の円 */
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
         .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
         .business-circle strong { font-size: 1.1rem; display: inline-block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
@@ -40,19 +43,14 @@
         .business-circle a:hover { opacity: 0.8; transform: scale(1.03); transition: 0.3s; }
         .check-link { background: #fff; color: #333; padding: 2px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
 
-        .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
-        .latest-info-text { flex: 1; min-width: 250px; }
+        /* 最新情報 SNS */
         .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; vertical-align: middle; }
-        
-        /* ラポクロロゴ：SNSに馴染むよう背景を透明・枠なしに */
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
-        .rappoclo-sns-logo:hover { opacity: 0.7; }
-
         .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
+        /* 採用求人 */
         .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: 0.3s; color: #333; text-decoration: none; }
-        .recruit-link:hover { background: #f0f0f0; border-left-color: #333; padding-left: 1.5rem; }
         
         .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
         .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; cursor: pointer; }
@@ -60,12 +58,31 @@
         .section-spacer { height: 4rem; clear: both; }
         .title-under-spacer { height: 1.5rem; }
 
+        /* --- スマホ専用メディアクエリ --- */
         @media screen and (max-width: 1024px) {
-            .main-copy { font-size: 2rem; }
+            .hero-banner { padding: 3rem 1.5rem; }
+            .company-name-top { font-size: 1.4rem !important; margin-bottom: 1.5rem; }
+            .main-copy { font-size: 1.8rem; margin-bottom: 1.5rem; }
+            
+            /* イラストが被らないよう背面に配置し、少し右下に逃がす */
+            .floating-hero-image { 
+                width: 280px; 
+                right: -60px; 
+                top: 20px; 
+                opacity: 0.5; /* 文字を読みやすくするために透過 */
+            }
+
+            /* スマホで改行が崩れないように設定 */
+            .sub-copy { font-size: 0.95rem; line-height: 1.6; }
+            /* PC用の強制改行をスマホでは無効化するクラスを適用 */
+            .pc-only-br { display: none; }
+
             .prevent-break { font-size: 0.9rem; white-space: normal; }
             .sns-side-img { display: none; }
             .omoi-text-wrapper { margin-right: 0; }
             .representative-frame { margin: 2rem auto 0; width: 190px; height: 190px; }
+            
+            .business-circle { width: 100%; max-width: 280px; height: 220px; }
         }
     </style>
 </head>
@@ -75,7 +92,7 @@
             <div class="hero-text-content">
                 <div class="company-name-top">合同会社ある</div>
                 <h1 class="main-copy">可能性をつかむ場所が<br>ここにある。</h1>
-                <p class="sub-copy">顧客のニーズを理解し、<br>最高品質かつ最高の成果を提供することに全力を尽くします。</p>
+                <p class="sub-copy">顧客のニーズを理解し、<br class="pc-only-br">最高品質かつ最高の成果を提供することに全力を尽くします。</p>
             </div>
             <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000" class="floating-hero-image">
         </div>
@@ -88,9 +105,7 @@
                 <div class="omoi-content mt-5">
                     <p>合同会社あるを創業したきっかけは、</p>
                     <p class="prevent-break">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
-                    
                     <p style="white-space: nowrap;">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
-                    
                     <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
                     <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
                     <strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
