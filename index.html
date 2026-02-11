@@ -26,7 +26,7 @@
         .omoi-content p { margin: 0; padding: 0; line-height: 1.4; } 
 
         /* 行間指定クラス */
-        .sp-br { display: none; } /* 基本は非表示（スマホのみ表示） */
+        .sp-br { display: none; } 
         .gap-08 { margin-bottom: 0.8em !important; }
         .gap-20 { margin-bottom: 2.0em !important; }
         
@@ -45,17 +45,7 @@
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
         .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); transition: 0.3s ease; }
         
-        .business-circle.rappoclo-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-            background: #ffeb85; 
-        }
-
-        .business-circle strong { font-size: 1.1rem; display: inline-block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
-        .business-circle a { color: inherit; text-decoration: none; display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .check-link { background: #fff; color: #333; padding: 2px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
-
-        /* 最新情報 SNS */
+        /* 最新情報 SNSセクション修正点 */
         .sns-icons-wrap { display: flex; align-items: center; gap: 15px; margin-top: 1.5rem; }
         .sns-custom-btn { 
             width: 55px; height: 55px; border-radius: 12px; 
@@ -63,10 +53,11 @@
             display: flex; justify-content: center; align-items: center;
             transition: 0.3s;
             text-decoration: none !important;
+            overflow: hidden; /* はみ出し防止 */
         }
         .sns-custom-btn svg { width: 30px; height: 30px; fill: #ffffff; }
+        .sns-custom-btn img { width: 100%; height: 100%; object-fit: contain; padding: 5px; } /* ラポクロ用設定 */
         .sns-custom-btn:hover { transform: translateY(-3px); opacity: 0.8; }
-        .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
 
         /* 求人リンク */
         .recruit-link { 
@@ -83,7 +74,7 @@
         .section-spacer { height: 6rem; clear: both; } 
         .title-under-spacer { height: 1.5rem; }
 
-        /* --- レスポンシブ --- */
+        /* レスポンシブ */
         @media screen and (max-width: 1024px) {
             .main-copy { font-size: 2rem; }
             .representative-frame { margin: 2rem auto 0; width: 250px; height: 250px; }
@@ -91,8 +82,6 @@
             .recruit-link { font-size: 0.85rem; padding: 1rem; }
             .sub-copy { font-size: 0.95rem; }
             .section-spacer { height: 4rem; }
-
-            /* スマホ用改行制御 */
             .pc-only { display: none; }
             .sp-br { display: block; }
         }
@@ -117,17 +106,12 @@
                 <div class="omoi-content mt-5">
                     <p class="gap-08">合同会社あるを創業したきっかけは、</p>
                     <p class="gap-20">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
-                    
                     <p class="pc-only gap-20">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
-                    
                     <p class="sp-br gap-08">金融詐欺を通して</p>
                     <p class="sp-br gap-20">「悪用された営業」に対し激しい憤りを感じました。</p>
-                    
                     <p class="gap-08">世界から詐欺を少しでもなくしたいと思い、弊社では</p>
                     <p class="gap-08"><strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、</p>
-                    
                     <p class="pc-only"><strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
-                    
                     <p class="sp-br gap-08"><strong>「何があってもお客様の味方」</strong></p>
                     <p class="sp-br">というマインドを遵守しています。</p>
                 </div>
@@ -172,8 +156,8 @@
                     <a href="https://www.youtube.com/@daradaradarao829" target="_blank" class="sns-custom-btn">
                         <svg viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V174.4l144 81.6-144 81.6z"/></svg>
                     </a>
-                    <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
-                        <img src="https://drive.google.com/thumbnail?id=1Hi--fUVhC6Ta1rAfqePTZN7hen_G-hiq&sz=w200" class="rappoclo-sns-logo" alt="ラポクロ">
+                    <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank" class="sns-custom-btn">
+                        <img src="https://drive.google.com/thumbnail?id=1Hi--fUVhC6Ta1rAfqePTZN7hen_G-hiq&sz=w200" alt="ラポクロ">
                     </a>
                 </div>
             </div>
