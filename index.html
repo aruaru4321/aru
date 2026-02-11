@@ -8,16 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 冒頭の余白を削除し、スムーズな表示に */
         body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
         
-        /* ヒーローバナーが一番上から始まるように調整 */
         .hero-banner { background-color: #fade6b; padding: 5rem 2rem; position: relative; overflow: hidden; margin-top: 0; }
         
         .hero-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
         .company-name-top { font-size: 1.7rem !important; border-bottom: 2px solid #333; display: inline-block !important; margin-bottom: 2.5rem; padding-bottom: 2px; font-weight: bold; }
         .main-copy { font-size: 2.8rem; font-weight: bold; line-height: 1.4; margin-bottom: 2rem; letter-spacing: 0.05em; }
         .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
+        
+        /* 冒頭画像の透明化（乗算）と配置の維持 */
         .floating-hero-image { position: absolute; right: -30px; top: -100px; width: 400px; height: auto; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
         
         .prevent-break { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -45,7 +45,6 @@
         .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; vertical-align: middle; }
         
-        /* ラポクロロゴ：SNSに馴染むよう背景を透明・枠なしに */
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
         .rappoclo-sns-logo:hover { opacity: 0.7; }
 
@@ -60,12 +59,16 @@
         .section-spacer { height: 4rem; clear: both; }
         .title-under-spacer { height: 1.5rem; }
 
+        /* スマホ版の調整を元に戻しました */
         @media screen and (max-width: 1024px) {
             .main-copy { font-size: 2rem; }
+            /* 改行を維持するための設定を復元 */
             .prevent-break { font-size: 0.9rem; white-space: normal; }
             .sns-side-img { display: none; }
             .omoi-text-wrapper { margin-right: 0; }
             .representative-frame { margin: 2rem auto 0; width: 190px; height: 190px; }
+            /* スマホでも画像の透明化を適用 */
+            .floating-hero-image { top: -50px; right: -20px; width: 250px; opacity: 0.8; }
         }
     </style>
 </head>
