@@ -6,69 +6,110 @@
     <title>合同会社ある | 可能性をつかむ場所がここにある。</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: 'Kosugi Maru', sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
+        /* 全体共通 */
+        * { font-family: 'Kosugi Maru', sans-serif !important; }
+        body { background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
         
+        /* ヒーローバナー */
         .hero-banner { background-color: #fade6b; padding: 5rem 2rem; position: relative; overflow: hidden; margin-top: 0; }
-        
         .hero-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
         .company-name-top { font-size: 1.7rem !important; border-bottom: 2px solid #333; display: inline-block !important; margin-bottom: 2.5rem; padding-bottom: 2px; font-weight: bold; }
         .main-copy { font-size: 2.8rem; font-weight: bold; line-height: 1.4; margin-bottom: 2rem; letter-spacing: 0.05em; }
         .sub-copy { font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
-        
-        /* 冒頭画像の透明化（乗算）と配置の維持 */
         .floating-hero-image { position: absolute; right: -30px; top: -100px; width: 400px; height: auto; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
         
-        .prevent-break { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
+        /* 設立のオモイ */
         .omoi-section { background: #fff; padding: 5rem 1rem 1rem; }
         .omoi-container { max-width: 800px; margin: 0 auto; position: relative; display: flex; align-items: flex-end; flex-wrap: wrap; }
         .omoi-text-wrapper { flex: 1; min-width: 320px; max-width: 650px; z-index: 2; margin-right: 15px; }
-        .omoi-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .omoi-content p { margin: 0; padding: 0; line-height: 1.4; } 
         
-        .representative-frame { width: 220px; height: 220px; border-radius: 50%; border: 6px solid #fade6b; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0; }
+        /* PC用余白設定 */
+        .line-1 { margin-bottom: 0.8em !important; }
+        .line-2 { margin-bottom: 2.0em !important; }
+        .line-3 { margin-bottom: 2.0em !important; }
+        .line-4 { margin-bottom: 0.8em !important; }
+        .line-5 { margin-bottom: 0.8em !important; }
+        .line-6 { margin-bottom: 0em !important; }
+
+        /* 代表写真フレーム */
+        .representative-frame { 
+            width: 250px; height: 250px; border-radius: 50%; border: 6px solid #fade6b; 
+            overflow: hidden; display: flex; justify-content: center; align-items: center; 
+            background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0;
+            margin-bottom: -50px;
+        }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
         
+        /* 事業内容 */
         .card-container { max-width: 800px; margin: 0 auto; position: relative; padding: 0; }
         .underline-title { display: inline-block !important; border-bottom: 2px solid #333; margin-bottom: 0px !important; padding-bottom: 5px; line-height: 1.2; }
-        
         .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; position: relative; z-index: 2; }
-        .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
+        .business-circle { background: #fade6b; width: 250px; height: 250px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); transition: 0.3s ease; }
+        
+        /* ラポクロのみのホバー効果（PC用） */
+        .business-circle.rappoclo-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            background: #ffeb85; /* 少し明るい黄色に */
+        }
+
         .business-circle strong { font-size: 1.1rem; display: inline-block; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
         .business-circle a { color: inherit; text-decoration: none; display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .business-circle a:hover { opacity: 0.8; transform: scale(1.03); transition: 0.3s; }
         .check-link { background: #fff; color: #333; padding: 2px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
 
-        .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
-        .latest-info-text { flex: 1; min-width: 250px; }
-        .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
-        .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; vertical-align: middle; }
-        
+        /* 最新情報 SNS */
+        .sns-icons-wrap { display: flex; align-items: center; gap: 15px; margin-top: 1.5rem; }
+        .sns-custom-btn { 
+            width: 55px; height: 55px; border-radius: 12px; 
+            background-color: #fade6b; color: #333 !important;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 28px; transition: 0.3s;
+        }
+        .sns-custom-btn:hover { transform: translateY(-3px); opacity: 0.8; }
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
-        .rappoclo-sns-logo:hover { opacity: 0.7; }
 
-        .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
-
-        .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: 0.3s; color: #333; text-decoration: none; }
-        .recruit-link:hover { background: #f0f0f0; border-left-color: #333; padding-left: 1.5rem; }
+        /* 求人リンク */
+        .recruit-link { 
+            display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; 
+            border-left: 5px solid #fade6b; transition: 0.3s ease; color: #333; text-decoration: none; 
+        }
+        .recruit-link:hover { 
+            background: #f1f1f1; border-left: 10px solid #333; padding-left: 1.8rem; transform: translateX(8px); 
+        }
         
+        /* フォーム */
         .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
         .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; cursor: pointer; }
-
-        .section-spacer { height: 4rem; clear: both; }
+        .section-spacer { height: 6rem; clear: both; } 
         .title-under-spacer { height: 1.5rem; }
 
-        /* スマホ版の調整を元に戻しました */
+        /* --- レスポンシブ --- */
         @media screen and (max-width: 1024px) {
             .main-copy { font-size: 2rem; }
-            /* 改行を維持するための設定を復元 */
-            .prevent-break { font-size: 0.9rem; white-space: normal; }
-            .sns-side-img { display: none; }
-            .omoi-text-wrapper { margin-right: 0; }
-            .representative-frame { margin: 2rem auto 0; width: 190px; height: 190px; }
-            /* スマホでも画像の透明化を適用 */
-            .floating-hero-image { top: -50px; right: -20px; width: 250px; opacity: 0.8; }
+            .representative-frame { margin: 2rem auto 0; width: 250px; height: 250px; }
+            .floating-hero-image { opacity: 0.4; right: -156px; top: -76px; }
+            .recruit-link { font-size: 0.85rem; padding: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+            .sub-copy { font-size: 0.95rem; }
+
+            .line-1 { margin-bottom: 0.8em !important; }
+            .line-2 { margin-bottom: 2.0em !important; }
+            .line-3a { margin-bottom: 0.8em !important; }
+            .line-3b { margin-bottom: 2.0em !important; }
+            .line-4 { margin-bottom: 0.8em !important; }
+            .line-5 { margin-bottom: 0.8em !important; }
+            .line-6a { margin-bottom: 0.8em !important; }
+            .line-6b { margin-bottom: 0em !important; } 
+            .section-spacer { height: 4rem; }
+            
+            /* スマホではホバー効果を無効化（誤操作防止） */
+            .business-circle.rappoclo-hover:hover {
+                transform: none;
+                box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+                background: #fade6b;
+            }
         }
     </style>
 </head>
@@ -89,14 +130,19 @@
             <div class="omoi-text-wrapper">
                 <h3 class="title is-4 underline-title">設立のオモイ</h3>
                 <div class="omoi-content mt-5">
-                    <p>合同会社あるを創業したきっかけは、</p>
-                    <p class="prevent-break">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
+                    <p class="line-1">合同会社あるを創業したきっかけは、</p>
+                    <p class="line-2">実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
                     
-                    <p style="white-space: nowrap;">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
+                    <p class="line-3a is-hidden-tablet">金融詐欺を通して</p>
+                    <p class="line-3b is-hidden-tablet">「悪用された営業」に対し激しい憤りを感じました。</p>
+                    <p class="line-3 is-hidden-mobile">金融詐欺を通して「悪用された営業」に対し激しい憤りを感じました。</p>
                     
-                    <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
-                    <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
-                    <strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
+                    <p class="line-4">世界から詐欺を少しでもなくしたいと思い、弊社では</p>
+                    <p class="line-5"><strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、</p>
+                    
+                    <p class="line-6a is-hidden-tablet"><strong>「何があってもお客様の味方」</strong></p>
+                    <p class="line-6b is-hidden-tablet">というマインドを遵守しています。</p>
+                    <p class="line-6 is-hidden-mobile"><strong>「何があってもお客様の味方」</strong>というマインドを遵守しています。</p>
                 </div>
             </div>
             <div class="representative-frame">
@@ -114,7 +160,7 @@
                     <strong>①営業代行事業</strong>
                     <p>導線計画から<br>クロージングまでサポート</p>
                 </div>
-                <div class="business-circle">
+                <div class="business-circle rappoclo-hover">
                     <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
                         <strong>②ラポクロ</strong>
                         <p>オンラインセールス<br>養成スクール</p>
@@ -134,18 +180,13 @@
                 <div class="latest-info-text">
                     <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
                     <div class="sns-icons-wrap">
-                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank">
-                            <i class="fab fa-instagram sns-link-icon"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank">
-                            <i class="fab fa-youtube sns-link-icon"></i>
-                        </a>
+                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-youtube"></i></a>
                         <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
                             <img src="https://drive.google.com/thumbnail?id=1Hi--fUVhC6Ta1rAfqePTZN7hen_G-hiq&sz=w200" class="rappoclo-sns-logo" alt="ラポクロ">
                         </a>
                     </div>
                 </div>
-                <img src="https://drive.google.com/thumbnail?id=1wGGsfIHKhkYWlPFhbPLF4icnqUkRAB-K&sz=w500" class="sns-side-img">
             </div>
 
             <div class="section-spacer"></div>
