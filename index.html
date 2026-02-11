@@ -41,8 +41,14 @@
 
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
-        .sns-icons-wrap { display: flex; gap: 30px; margin-top: 1.5rem; }
+        .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
         .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; }
+        .sns-link-icon:hover { opacity: 0.7; }
+
+        /* ラポクロアイコンの独自調整 */
+        .rappoclo-icon-img { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; filter: grayscale(100%) brightness(120%) sepia(100%) hue-rotate(10deg) saturate(300%); transition: 0.3s; }
+        .rappoclo-icon-img:hover { opacity: 0.7; }
+
         .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
         .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: 0.3s; color: #333; text-decoration: none; }
@@ -124,10 +130,13 @@
             <h3 class="title is-4 underline-title">最新情報</h3>
             <div class="latest-info-flex mt-4">
                 <div class="latest-info-text">
-                    <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
+                    <p>SNSや関連サービスも発信しています！</p>
                     <div class="sns-icons-wrap">
                         <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank"><i class="fa-brands fa-instagram sns-link-icon"></i></a>
                         <a href="https://www.youtube.com/@daradaradarao829" target="_blank"><i class="fa-brands fa-youtube sns-link-icon"></i></a>
+                        <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
+                            <img src="https://drive.google.com/thumbnail?id=1mO7K-gSAnvIlyXU7Yn10N18mXgJpU2_l&sz=w200" class="rappoclo-icon-img" alt="ラポクロ">
+                        </a>
                     </div>
                 </div>
                 <img src="https://drive.google.com/thumbnail?id=1wGGsfIHKhkYWlPFhbPLF4icnqUkRAB-K&sz=w500" class="sns-side-img">
