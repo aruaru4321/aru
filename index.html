@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* 全体共通：フォントを強力に固定 */
+        /* 全体共通 */
         * { font-family: 'Kosugi Maru', sans-serif !important; }
         body { background-color: #fff; color: #333; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
         
@@ -37,36 +37,39 @@
         .business-circle a { color: inherit; text-decoration: none; display: flex; flex-direction: column; align-items: center; width: 100%; }
         .check-link { background: #fff; color: #333; padding: 2px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; }
 
-        /* 最新情報 SNS */
-        .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
-        .latest-info-text { flex: 1; min-width: 250px; }
-        .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
-        /* SNSアイコンの色とサイズを固定 */
-        .sns-link-icon { font-size: 50px !important; color: #333 !important; transition: 0.3s; vertical-align: middle; display: inline-block; }
-        .sns-link-icon:hover { opacity: 0.7; transform: scale(1.1); }
+        /* 【修正②】最新情報 SNSロゴのデザイン統一 */
+        .sns-icons-wrap { display: flex; align-items: center; gap: 15px; margin-top: 1.5rem; }
+        .sns-custom-btn { 
+            width: 55px; height: 55px; border-radius: 12px; 
+            background-color: #fade6b; color: #333 !important;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 28px; transition: 0.3s;
+        }
+        .sns-custom-btn:hover { transform: translateY(-3px); opacity: 0.8; }
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
-        .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
-        /* 【修正③】採用情報のホバー効果：スッと右に伸びるアニメーション */
-        .recruit-link { display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; border-left: 5px solid #fade6b; transition: all 0.3s ease; color: #333; text-decoration: none; position: relative; overflow: hidden; }
-        .recruit-link:hover { background: #f0f0f0; border-left-color: #333; padding-left: 2rem; transform: translateX(5px); }
+        /* 【修正③】求人リンクのホバー効果（スッと動く） */
+        .recruit-link { 
+            display: block; background: #f9f9f9; padding: 1.2rem; border-radius: 10px; margin-bottom: 10px; 
+            border-left: 5px solid #fade6b; transition: 0.3s ease; color: #333; text-decoration: none; 
+        }
+        .recruit-link:hover { 
+            background: #f1f1f1; border-left: 10px solid #333; padding-left: 1.8rem; transform: translateX(8px); 
+        }
         
         /* フォーム */
         .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
         .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; cursor: pointer; }
-
         .section-spacer { height: 4rem; clear: both; }
         .title-under-spacer { height: 1.5rem; }
 
-        /* --- スマホ専用レスポンシブ微調整 --- */
+        /* --- レスポンシブ --- */
         @media screen and (max-width: 1024px) {
             .main-copy { font-size: 2rem; }
-            .sns-side-img { display: none; }
-            .omoi-text-wrapper { margin-right: 0; }
             .representative-frame { margin: 2rem auto 0; width: 250px; height: 250px; }
             
-            /* 【修正①】冒頭画像の位置を少し上げ、顔が「場所」の下あたりに来るように */
-            .floating-hero-image { opacity: 0.4; right: -100px; top: -20px; }
+            /* 【修正①】冒頭画像の位置をさらに上げ、「場所」の下に合わせる */
+            .floating-hero-image { opacity: 0.4; right: -100px; top: -40px; }
             
             .recruit-link { font-size: 0.85rem; padding: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
             .sub-copy { font-size: 0.95rem; }
@@ -133,14 +136,13 @@
                 <div class="latest-info-text">
                     <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
                     <div class="sns-icons-wrap">
-                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank"><i class="fa-brands fa-instagram sns-link-icon"></i></a>
-                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank"><i class="fa-brands fa-youtube sns-link-icon"></i></a>
+                        <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@daradaradarao829" target="_blank" class="sns-custom-btn"><i class="fa-brands fa-youtube"></i></a>
                         <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
                             <img src="https://drive.google.com/thumbnail?id=1Hi--fUVhC6Ta1rAfqePTZN7hen_G-hiq&sz=w200" class="rappoclo-sns-logo" alt="ラポクロ">
                         </a>
                     </div>
                 </div>
-                <img src="https://drive.google.com/thumbnail?id=1wGGsfIHKhkYWlPFhbPLF4icnqUkRAB-K&sz=w500" class="sns-side-img">
             </div>
 
             <div class="section-spacer"></div>
