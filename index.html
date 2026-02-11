@@ -41,13 +41,15 @@
 
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
+        
+        /* SNSアイコンの配置調整 */
         .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
-        .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; }
+        .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; vertical-align: middle; }
         .sns-link-icon:hover { opacity: 0.7; }
-
-        /* ラポクロアイコンの独自調整 */
-        .rappoclo-icon-img { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; filter: grayscale(100%) brightness(120%) sepia(100%) hue-rotate(10deg) saturate(300%); transition: 0.3s; }
-        .rappoclo-icon-img:hover { opacity: 0.7; }
+        
+        /* ラポクロロゴ：他のアイコンの色調に合わせ、丸く整える */
+        .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
+        .rappoclo-sns-logo:hover { opacity: 0.7; }
 
         .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
@@ -130,12 +132,12 @@
             <h3 class="title is-4 underline-title">最新情報</h3>
             <div class="latest-info-flex mt-4">
                 <div class="latest-info-text">
-                    <p>SNSや関連サービスも発信しています！</p>
+                    <p>SNSでも情報を発信しています。ぜひご覧ください！</p>
                     <div class="sns-icons-wrap">
                         <a href="https://www.instagram.com/darao_zaitakuwork?" target="_blank"><i class="fa-brands fa-instagram sns-link-icon"></i></a>
                         <a href="https://www.youtube.com/@daradaradarao829" target="_blank"><i class="fa-brands fa-youtube sns-link-icon"></i></a>
                         <a href="https://skilabo.co.jp/rappoclo/meta01/" target="_blank">
-                            <img src="https://drive.google.com/thumbnail?id=1mO7K-gSAnvIlyXU7Yn10N18mXgJpU2_l&sz=w200" class="rappoclo-icon-img" alt="ラポクロ">
+                            <img src="https://drive.google.com/thumbnail?id=1Hi--fUVhC6Ta1rAfqePTZN7hen_G-hiq&sz=w200" class="rappoclo-sns-logo" alt="ラポクロ">
                         </a>
                     </div>
                 </div>
