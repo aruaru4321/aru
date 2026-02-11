@@ -41,7 +41,7 @@
         .latest-info-flex { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
         .latest-info-text { flex: 1; min-width: 250px; }
         .sns-icons-wrap { display: flex; align-items: center; gap: 25px; margin-top: 1.5rem; }
-        .sns-link-icon { font-size: 55px; color: #fade6b; transition: 0.3s; vertical-align: middle; }
+        .sns-link-icon { font-size: 50px; color: #333; transition: 0.3s; vertical-align: middle; } /* 色を#333に変更 */
         .rappoclo-sns-logo { width: 55px; height: 55px; border-radius: 12px; background-color: #fade6b; padding: 5px; transition: 0.3s; object-fit: contain; }
         .sns-side-img { width: 180px; height: auto; mix-blend-mode: multiply; border-radius: 10px; }
 
@@ -60,14 +60,11 @@
             .main-copy { font-size: 2rem; }
             .sns-side-img { display: none; }
             .omoi-text-wrapper { margin-right: 0; }
-            
-            /* 【修正3】社長の写真を250pxに拡大 */
             .representative-frame { margin: 2rem auto 0; width: 250px; height: 250px; }
             
-            /* 【修正1】冒頭画像をさらに右へ。透明度も40%で維持。 */
-            .floating-hero-image { opacity: 0.4; right: -100px; }
+            /* 【修正②】冒頭画像をさらに右へ、位置を下げて「場所」の下あたりに配置 */
+            .floating-hero-image { opacity: 0.4; right: -100px; top: 20px; }
             
-            /* 【修正】採用情報の1行化 */
             .recruit-link { font-size: 0.85rem; padding: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
             .sub-copy { font-size: 0.95rem; }
         }
@@ -79,7 +76,7 @@
             <div class="hero-text-content">
                 <div class="company-name-top">合同会社ある</div>
                 <h1 class="main-copy">可能性をつかむ場所が<br>ここにある。</h1>
-                <p class="sub-copy">顧客のニーズを理解し、<br class="is-hidden-mobile">最高品質かつ最高の成果を提供することに全力を尽くします。</p>
+                <p class="sub-copy">顧客のニーズを理解し、<br>最高品質かつ最高の成果を提供することに全力を尽くします。</p>
             </div>
             <img src="https://drive.google.com/thumbnail?id=1lWyRNISZJxZLzRvbTYUkaKgV54ZQnRfl&sz=w1000" class="floating-hero-image">
         </div>
@@ -92,12 +89,10 @@
                 <div class="omoi-content mt-5">
                     <p>合同会社あるを創業したきっかけは、</p>
                     <p>実の母親が金融詐欺に遭い、老後資金を全て失ったことです。</p>
-                    
                     <p>金融詐欺を通して<br class="is-hidden-tablet">「悪用された営業」に対し激しい憤りを感じました。</p>
-                    
                     <p>世界から詐欺を少しでもなくしたいと思い、弊社では<br>
                     <strong>「可能性を掴む場所がここにある。」</strong>をビジョンに掲げ、<br>
-                    <strong>「何があってもお客様の味方」<br class="is-hidden-tablet">というマインドを遵守しています。</strong></p>
+                    <strong>「何があってもお客様の味方」</strong><br class="is-hidden-tablet">というマインドを遵守しています。</p>
                 </div>
             </div>
             <div class="representative-frame">
