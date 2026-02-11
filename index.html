@@ -34,12 +34,12 @@
         .line-5 { margin-bottom: 0.8em !important; }
         .line-6 { margin-bottom: 0em !important; }
 
-        /* 代表写真フレーム（PC版でさらに1cm/計60px下げ） */
+        /* 代表写真フレーム（PC版 250px / 位置微調整） */
         .representative-frame { 
-            width: 220px; height: 220px; border-radius: 50%; border: 6px solid #fade6b; 
+            width: 250px; height: 250px; border-radius: 50%; border: 6px solid #fade6b; 
             overflow: hidden; display: flex; justify-content: center; align-items: center; 
             background-color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 1; flex-shrink: 0;
-            margin-bottom: -60px; /* PC版での位置調整 */
+            margin-bottom: -50px; /* サイズアップに合わせて少し調整 */
         }
         .representative-frame img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -75,7 +75,7 @@
         /* フォーム */
         .contact-form { background-color: #fcfcfc; padding: 2.5rem; border-radius: 15px; border: 1px solid #eee; margin-bottom: 3rem; }
         .button.is-primary-custom { background-color: #fade6b; color: #333; font-weight: bold; border: none; cursor: pointer; }
-        .section-spacer { height: 6rem; clear: both; } /* 重なり防止のため少し広げました */
+        .section-spacer { height: 6rem; clear: both; } 
         .title-under-spacer { height: 1.5rem; }
 
         /* --- レスポンシブ --- */
